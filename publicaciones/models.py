@@ -1,3 +1,35 @@
+#encoding: utf-8
+
 from django.db import models
+from ckeditor.fields import RichTextField
+from django.template.defaultfilters import slugify
+from sitiosweb.utils import get_file_path
+from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 
 # Create your models here.
+class Publicaciones(models.Model):
+    titulo = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200,editable=False)
+    fecha = models.DateField('Fecha de publicación')
+    descripcion = RichTextField('Descripción')
+    adjunto = models.FileField(upload_to=get_file_path, null=True, blank=True)
+
+    fileDir = 'publicaciones/'
+
+    autor = models.ForeignKey(User)
+
+    def save(self, *args, **kwargs):
+        self.slug = (slugify(self.titulo))
+        super(Publicaciones, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        #return '/noticias/%s/' % (self.slug)
+        return reverse('publicaciones.views.details', args=[str(self.slug)])
+
+    class Meta:
+        verbose_name = 'Publicación'
+        verbose_name_plural = 'Publicaciones'
+
+    def __unicode__(self):
+        return u'%s' % self.titulo

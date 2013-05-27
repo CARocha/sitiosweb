@@ -1,3 +1,34 @@
+#encoding: utf-8
+
 from django.db import models
+from ckeditor.fields import RichTextField
+from django.template.defaultfilters import slugify
+from multimedia.models import Fotos
+from django.contrib.auth.models import User
+from django.contrib.contenttypes import generic
+from django.core.urlresolvers import reverse
 
 # Create your models here.
+class Noticias(models.Model):
+    titulo = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200,editable=False)
+    fecha = models.DateField()
+    descripcion = RichTextField('Descripción')
+    fotos = generic.GenericRelation(Fotos)
+
+    autor = models.ForeignKey(User)
+
+    def save(self, *args, **kwargs):
+        self.slug = (slugify(self.titulo))
+        super(Noticias, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        #return '/noticias/%s/' % (self.slug)
+        return reverse('noticias.views.details', args=[str(self.slug)])
+
+    class Meta:
+        verbose_name = 'Noticia'
+        verbose_name_plural = 'Noticias'
+
+    def __unicode__(self):
+        return u'%s' % self.titulo
