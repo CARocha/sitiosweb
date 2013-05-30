@@ -15,6 +15,7 @@ class Noticias(models.Model):
     fecha = models.DateField()
     descripcion = RichTextField('Descripción')
     fotos = generic.GenericRelation(Fotos)
+    #categorias = 
 
     autor = models.ForeignKey(User)
 
@@ -24,7 +25,10 @@ class Noticias(models.Model):
 
     def get_absolute_url(self):
         #return '/noticias/%s/' % (self.slug)
-        return reverse('noticias.views.details', args=[str(self.slug)])
+        return reverse('noticias_detalle', kwargs={'slug': self.slug})
+
+    #def get_tags(self):
+    #    return Tag.objects.get_for_object(self)
 
     class Meta:
         verbose_name = 'Noticia'

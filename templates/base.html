@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sitios webs XD</title>
+</head>
+<body>
+	<ul>{% load menubuilder %}{% menu headernavigation %}
+    {% for item in menuitems %}<li><a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a></li>
+    {% endfor %}
+	</ul>
+	<ul>{% load menubuilder %}{% menu paginas %}
+    {% for item in menuitems %}<li><a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a></li>
+    {% endfor %}
+	</ul>
+	{% block contenido %}{% endblock contenido %}
+</body>
+</html>

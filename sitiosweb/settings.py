@@ -102,6 +102,7 @@ INSTALLED_APPS = (
     'south',
     'tagging',
     'tagging_autocomplete',
+    'menu',
 )
 
 # A sample logging configuration. The only tangible logging

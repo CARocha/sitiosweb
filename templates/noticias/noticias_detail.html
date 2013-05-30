@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+	<ul>
+            <li>{{ object.titulo }}</li>
+           
+            <li>{{ object.fecha }}</li>
+            <li>{{ object.descripcion|safe }}</li>
+            
+        
+    </ul>
+{% endblock contenido %}

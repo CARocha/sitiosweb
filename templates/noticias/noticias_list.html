@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <h2>Noticias</h2>
+    <ul>
+        {% for noticia in object_list %}
+            <a href="{{ noticia.get_absolute_url }}"><li>{{ noticia.titulo }}</li></a>
+            
+            <li>{{ noticia.fecha }}</li>
+            <li>{{ noticia.descripcion|safe }}</li>
+           
+        {% endfor %}
+    </ul>
+{% endblock %}

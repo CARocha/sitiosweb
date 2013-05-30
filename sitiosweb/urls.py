@@ -6,13 +6,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'sitiosweb.views.home', name='home'),
-    # url(r'^sitiosweb/', include('sitiosweb.foo.urls')),
-
-    # Uncomment the next line to enable the admin:
+    url(r'^', include('noticias.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^tagging_autocomplete/', include('tagging_autocomplete.urls')),
+    url('^pages/', include('django.contrib.flatpages.urls')),
+    url(r'^ckeditor/', include('ckeditor.urls')),
 )
 
 
