@@ -7,6 +7,7 @@ from multimedia.models import Fotos
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django.core.urlresolvers import reverse
+from tagging_autocomplete.models import TagAutocompleteField
 
 # Create your models here.
 class Eventos(models.Model):
@@ -16,6 +17,8 @@ class Eventos(models.Model):
     fecha_finalizacion = models.DateField()
     descripcion = RichTextField('Descripción')
     fotos = generic.GenericRelation(Fotos)
+    categoria= TagAutocompleteField(help_text='Separar elementos con "," ', 
+                                    null=True, blank=True)
 
     autor = models.ForeignKey(User)
 
@@ -25,7 +28,7 @@ class Eventos(models.Model):
 
     def get_absolute_url(self):
         #return '/noticias/%s/' % (self.slug)
-        return reverse('eventos.views.details', args=[str(self.slug)])
+        return reverse('eventos_detalle', kwargs=['slug',self.slug])
 
     class Meta:
         verbose_name = 'Evento'

@@ -4,11 +4,9 @@
     <h2>Noticias</h2>
     <ul>
         {% for noticia in object_list %}
-            <a href="{{ noticia.get_absolute_url }}"><li>{{ noticia.titulo }}</li></a>
-            
+            <li><a href="{{ noticia.get_absolute_url }}">{{ noticia.titulo }}</a></li>
             <li>{{ noticia.fecha }}</li>
-            <li>{{ noticia.descripcion|safe }}</li>
-           
+            <li>{{ noticia.descripcion|striptags|safe|truncatewords:16 }}</li>
         {% endfor %}
     </ul>
 {% endblock %}

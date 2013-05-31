@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+	<ul>
+        <li>{{ object.titulo }}</li>
+        <li>{{ object.fecha_inicio }} -- {{ object.fecha_finalizacion }}</li>
+        <li>{{ object.descripcion|safe }}</li>
+        <li>{{object.fotos}}</li>
+        <li>{{object.categoria}}</li>
+    </ul>
+{% endblock contenido %}

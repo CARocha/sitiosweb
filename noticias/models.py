@@ -7,6 +7,7 @@ from multimedia.models import Fotos
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django.core.urlresolvers import reverse
+from tagging_autocomplete.models import TagAutocompleteField
 
 # Create your models here.
 class Noticias(models.Model):
@@ -15,7 +16,8 @@ class Noticias(models.Model):
     fecha = models.DateField()
     descripcion = RichTextField('Descripción')
     fotos = generic.GenericRelation(Fotos)
-    #categorias = 
+    categoria= TagAutocompleteField(help_text='Separar elementos con "," ', 
+                                    null=True, blank=True)
 
     autor = models.ForeignKey(User)
 

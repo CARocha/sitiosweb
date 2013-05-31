@@ -13,12 +13,9 @@ class NoticiasList(ListView):
 	model = Noticias
 
 class NoticiasDetailView(DetailView):
-
     model = Noticias
 
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        context = super(NoticiasDetailView, self).get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-        context['noticias_list'] = Noticias.objects.all()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super(NoticiasDetailView, self).get_context_data(**kwargs)
+    #     context['noticias_list'] = Noticias.objects.all()
+    #     return context
