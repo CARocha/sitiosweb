@@ -5,6 +5,12 @@ from .models import Noticias
 
 def index(request, template='index.html'):
 	hola = "hola con render"
+	#ultimas 3 noticias
+	#ultimas 4 noticias destacadas
+	#2 videos 
+	#2 eventos
+	#3 ultimas publicaciones
+	#4 ultimos videos
 	noticias = Noticias.objects.all()
 	return render(request, template, {'hola':hola,'noticias':noticias})
 

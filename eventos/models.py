@@ -27,8 +27,7 @@ class Eventos(models.Model):
         super(Eventos, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        #return '/noticias/%s/' % (self.slug)
-        return reverse('eventos_detalle', kwargs=['slug',self.slug])
+        return reverse('eventos_detalle', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Evento'

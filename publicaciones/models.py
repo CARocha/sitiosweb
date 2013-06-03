@@ -27,8 +27,7 @@ class Publicaciones(models.Model):
         super(Publicaciones, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        #return '/noticias/%s/' % (self.slug)
-        return reverse('publicaciones_detalles', kwargs=['slug', self.slug])
+        return reverse('publicaciones_detalles', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Publicación'
