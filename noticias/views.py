@@ -1,27 +1,35 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Noticias
+from multimedia.models import Videos, Audio
+from eventos.models import Eventos
+from publicaciones.models import Publicaciones
 
 
 def index(request, template='index.html'):
-	hola = "hola con render"
-	#ultimas 3 noticias
-	#ultimas 4 noticias destacadas
-	#2 videos 
-	#2 eventos
-	#3 ultimas publicaciones
-	#4 ultimos videos
-	noticias = Noticias.objects.all()
-	return render(request, template, {'hola':hola,'noticias':noticias})
+    #ultimas 3 noticias
+    ultimas_noticias = Noticias.objects.order_by('-id')[0:3]
+    #ultimas 4 noticias destacadas
+    ultimas_destacadas = Noticias.objects.filter(destacada=True).order_by('-id')[0:4]
+    #2 videos 
+    ultimos_videos = Videos.objects.order_by('-id')[0:2]
+    #2 eventos
+    ultimos_eventos = Eventos.objects.order_by('-id')[0:2]
+    #3 ultimas publicaciones
+    ultimas_publicaciones = Publicaciones.objects.order_by('-id')[0:3]
+    #4 ultimos audios
+    ultimos_audios = Audio.objects.order_by('-id')[0:4]
+    
+    return render(request, template, {'ultimas_noticias':ultimas_noticias,
+                                                               'ultimas_destacadas':ultimas_destacadas,
+                                                               'ultimos_videos':ultimos_videos,
+                                                               'ultimos_eventos':ultimos_eventos,
+                                                               'ultimas_publicaciones':ultimas_publicaciones,
+                                                               'ultimos_audios':ultimos_audios})
 
 
 class NoticiasList(ListView):
-	model = Noticias
+    model = Noticias
 
 class NoticiasDetailView(DetailView):
     model = Noticias
-
-    # def get_context_data(self, **kwargs):
-    #     context = super(NoticiasDetailView, self).get_context_data(**kwargs)
-    #     context['noticias_list'] = Noticias.objects.all()
-    #     return context

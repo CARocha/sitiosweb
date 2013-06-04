@@ -18,6 +18,7 @@ class Noticias(models.Model):
     fotos = generic.GenericRelation(Fotos)
     categoria= TagAutocompleteField(help_text='Separar elementos con "," ', 
                                     null=True, blank=True)
+    destacada = models.BooleanField()
 
     autor = models.ForeignKey(User)
 
@@ -26,7 +27,6 @@ class Noticias(models.Model):
         super(Noticias, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        #return '/noticias/%s/' % (self.slug)
         return reverse('noticias_detalle', kwargs={'slug': self.slug})
 
     #def get_tags(self):

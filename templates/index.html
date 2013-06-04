@@ -1,5 +1,46 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-	Hola desde nose XD
+<h1>Noticas destacadas</h1>
+    {% for noticia in ultimas_destacadas %}
+        {{noticia.titulo}}
+    {% empty %}
+        <p>No hay noticias destacadas</p>
+    {% endfor %}
+
+<h1>Ultimas noticias</h1>
+    {% for noticia in ultimas_noticias %}
+        {{noticia.titulo}}
+    {% empty %}
+        <p>No hay noticias</p>
+    {% endfor %}
+
+<h1>Ultimas videos</h1>
+    {% for video in ultimos_videos %}
+        {{video.url}}
+    {% empty %}
+        <p>No hay videos</p>
+    {% endfor %}
+
+<h1>Ultimas eventos</h1>
+    {% for evento in ultimos_eventos %}
+        {{evento.titulo}}
+    {% empty %}
+        <p>No hay evento</p>
+    {% endfor %}
+
+<h1>Ultimas publicaciones</h1>
+    {% for publicacion in ultimas_publicaciones %}
+        {{publicacion.titulo}}
+    {% empty %}
+        <p>No hay publicacion</p>
+    {% endfor %}
+
+<h1>Ultimas audios</h1>
+    {% for audio in ultimos_audios %}
+        {{audio.titulo}}
+    {% empty %}
+        <p>No hay audio</p>
+    {% endfor %}
+
 {% endblock contenido %}

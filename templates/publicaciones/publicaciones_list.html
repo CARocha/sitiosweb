@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+    <h2>Noticias</h2>
+    <ul>
+        {% for publicacion in object_list %}
+            <li><a href="{{ publicacion.get_absolute_url }}">{{ publicacion.titulo }}</a></li>
+            <li>{{ publicacion.fecha }}</li>
+            <li>{{ publicacion.descripcion|striptags|safe|truncatewords:16 }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -30,7 +30,7 @@ class Publicaciones(models.Model):
         return reverse('publicaciones_detalles', kwargs={'slug': self.slug})
 
     class Meta:
-        verbose_name = 'Publicación'
+        verbose_name = u'Publicacion'
         verbose_name_plural = 'Publicaciones'
 
     def __unicode__(self):
