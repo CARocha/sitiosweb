@@ -4,7 +4,6 @@ from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from sorl.thumbnail import ImageField
-from django.contrib.auth.models import User
 from sitiosweb.utils import get_file_path
 from tagging_autocomplete.models import TagAutocompleteField
 
@@ -21,8 +20,6 @@ class Fotos(models.Model):
 	content_object = generic.GenericForeignKey('content_type', 'object_id')
 
 	fileDir = 'fotos/'
-
-	autor = models.ForeignKey(User)
 
 	def __unicode__(self):
 		return self.nombre

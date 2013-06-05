@@ -24,14 +24,10 @@
 <div class="logo"></div>
 <!--Menu principal -->
 <nav>
-	<ul class="main-menu">
-		<li><a href="#">Nosotros</a></li>
-		<li><a href="#">Ninez y adolescencia</a></li>
-		<li><a href="#">Viviendo con VIH</a></li>
-		<li><a href="#">Noticias</a></li>
-		<li><a href="#">Multimedia y publicaciones</a></li>
-		<li><a href="#">Preguntas frecuentes</a></li>
-		
+	<ul class="main-menu">{% menu principal %}
+		{% for item in menuitems %}
+			<li><a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a></li>
+		{% endfor %}	
 	</ul>
 </nav>
 

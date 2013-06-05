@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load thumbnail %}
 {% block contenido %}
 <!--header -->  
 <div class="row">
@@ -12,6 +12,7 @@
   </div>
   <div class="large-4 columns">
     <h1 class="welcome">Bienvenidos a  ASONVIHSIDA</h1>
+
     <ul class="menu-rapido">
       <li>Conoce mas sobre VIH</li>
       <li>Tratamientos de VIH</li>
@@ -32,14 +33,18 @@
     <div class="news-post">
      {% for noticia in ultimas_noticias %}
       <div class="list-news">
-        <div class="img-news"><img src="http://placehold.it/85x90"></div>
+        {% for imagen in noticia.fotos.all|slice:"1" %}
+          {% thumbnail imagen "85x90" crop="10%" as img %}
+            <div class="img-news"><img src="{{img}}"></div>
+          {% endthumbnail %}
+        {% endfor %}
         <h2 class="title-news"><a href="#">{{noticia.titulo}}</a></h2>
         <div class="text-news">{{ noticia.descripcion|striptags|safe|truncatewords:16 }}</div>
       </div>
       {% empty %}
         <p>No hay noticias</p>
     {% endfor %}
-    <div class="read-more"><a href="#">Leer más</a></div>
+    <div class="read-more"><a href="{% url 'noticias_lista' %}">Leer más</a></div>
 
     </div>
     </div>
@@ -64,9 +69,8 @@
 
   </div>
   
-  </div>
 </div><!--large-12 content-principal  -->
-
+</div>
 <div class="large-12 content-pub columns">
   <div class="large-8 columns">
     <h1 class="text-title">Publicaciones</h1>
@@ -85,5 +89,5 @@
 </div><!--large-12 content- publicaciones -->
 
 </div><!--row content final -->
-  
+  </div><!--row content final -->
 {% endblock contenido %}

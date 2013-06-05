@@ -7,6 +7,7 @@ from sitiosweb.utils import get_file_path
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from tagging_autocomplete.models import TagAutocompleteField
+from sorl.thumbnail import ImageField
 
 # Create your models here.
 class Publicaciones(models.Model):
@@ -15,6 +16,7 @@ class Publicaciones(models.Model):
     fecha = models.DateField('Fecha de publicación')
     descripcion = RichTextField('Descripción')
     adjunto = models.FileField(upload_to=get_file_path, null=True, blank=True)
+    portada = ImageField(upload_to=get_file_path, blank=True, null=True)
     categoria= TagAutocompleteField(help_text='Separar elementos con "," ', 
                                     null=True, blank=True)
 
