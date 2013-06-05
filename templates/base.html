@@ -6,22 +6,39 @@
 
 	<meta charset="utf-8" /> 
 	<meta name="viewport" content="width=device-width" />
-	<title>{% block title %}Sitios webs XD{% endblock title %}</title>
+	<title>{% block title %}ASONVIHSIDA Gente positiva{% endblock title %}</title>
 
 	<link rel="stylesheet" href="{% static 'css/normalize.css' %}" /> 
 	<link rel="stylesheet" href="{% static 'css/foundation.css' %}" /> 
-	<link rel="stylesheet" href="{% static 'css/estilo.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/global.css' %}" />
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
 	<script src="{% static 'js/vendor/custom.modernizr.js' %}"></script>
 
 </head>
 {% load menubuilder %}
 <body>
-	<ul>{% menu paginas %}
-    {% for item in menuitems %}<li><a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a></li>
-    {% endfor %}
+<!--header -->
+<div class="row">
+<div class="large-12 top-header columns">
+<div class="logo"></div>
+<!--Menu principal -->
+<nav>
+	<ul class="main-menu">
+		<li><a href="#">Nosotros</a></li>
+		<li><a href="#">Ninez y adolescencia</a></li>
+		<li><a href="#">Viviendo con VIH</a></li>
+		<li><a href="#">Noticias</a></li>
+		<li><a href="#">Multimedia y publicaciones</a></li>
+		<li><a href="#">Preguntas frecuentes</a></li>
+		
 	</ul>
-	{% block contenido %}{% endblock contenido %}
+</nav>
+
+<!--Menu Principal -->
+</div>
+</div>
+{% block contenido %}{% endblock contenido %}
 
 <script> 
   document.write('<script src=' + 
@@ -44,6 +61,8 @@
 <script src="{% static 'js/foundation/foundation.tooltips.js' %}"></script> 
 <script src="{% static 'js/foundation/foundation.topbar.js' %}"></script> 
 <script> $(document).foundation(); </script>
+
+{% include "footer.html" %}
 
 </body>
 </html>

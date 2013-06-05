@@ -1,46 +1,89 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<h1>Noticas destacadas</h1>
-    {% for noticia in ultimas_destacadas %}
-        {{noticia.titulo}}
-    {% empty %}
-        <p>No hay noticias destacadas</p>
-    {% endfor %}
+<!--header -->  
+<div class="row">
+  <div class="large-12 top-content columns">
 
-<h1>Ultimas noticias</h1>
-    {% for noticia in ultimas_noticias %}
-        {{noticia.titulo}}
-    {% empty %}
+  <div class="large-8 columns">
+    <div class="slide-img">
+      <img src="http://placehold.it/560x360">
+    </div>
+  </div>
+  <div class="large-4 columns">
+    <h1 class="welcome">Bienvenidos a  ASONVIHSIDA</h1>
+    <ul class="menu-rapido">
+      <li>Conoce mas sobre VIH</li>
+      <li>Tratamientos de VIH</li>
+      <li>Comunicate con nosotros</li>
+      <li>Estadisticas</li>
+    </ul>
+  </div>
+
+  </div>
+  </div><!--row top content  final -->  
+
+  <div class="row">
+
+<div class="large-12 content columns">
+
+    <div class="large-3  columns">
+    <div class="title-bar">Ultimas Noticias</div>
+    <div class="news-post">
+     {% for noticia in ultimas_noticias %}
+      <div class="list-news">
+        <div class="img-news"><img src="http://placehold.it/85x90"></div>
+        <h2 class="title-news"><a href="#">{{noticia.titulo}}</a></h2>
+        <div class="text-news">{{ noticia.descripcion|striptags|safe|truncatewords:16 }}</div>
+      </div>
+      {% empty %}
         <p>No hay noticias</p>
     {% endfor %}
+    <div class="read-more"><a href="#">Leer más</a></div>
 
-<h1>Ultimas videos</h1>
-    {% for video in ultimos_videos %}
-        {{video.url}}
-    {% empty %}
-        <p>No hay videos</p>
-    {% endfor %}
+    </div>
+    </div>
 
-<h1>Ultimas eventos</h1>
-    {% for evento in ultimos_eventos %}
-        {{evento.titulo}}
+ <div class="large-6   columns">
+    <div class="title-bar">Multimedia - ultimos videos</div>
+    <div class="video-box">
+      <div class="video-sample">Video 1</div>
+      <div class="video-sample">Video 2</div>
+    
+    </div>
+  <div class="title-bar">Proximos eventos</div>
+  <div class="eventos">
+  {% for evento in ultimos_eventos %}
+    <div class="box-event">
+      <h2 class="title-event">{{evento.titulo}}</h2>
+      <div class="descripcion">{{ evento.descripcion|striptags|safe|truncatewords:10 }}</div>
+    </div>
     {% empty %}
         <p>No hay evento</p>
     {% endfor %}
 
-<h1>Ultimas publicaciones</h1>
-    {% for publicacion in ultimas_publicaciones %}
-        {{publicacion.titulo}}
+  </div>
+  
+  </div>
+</div><!--large-12 content-principal  -->
+
+<div class="large-12 content-pub columns">
+  <div class="large-8 columns">
+    <h1 class="text-title">Publicaciones</h1>
+  {% for publicacion in ultimas_publicaciones %}
+    <div class="pub-front">
+      <img src="http://placehold.it/152x170">
+      <h2 class="title-pub">{{publicacion.titulo}}</h2>
+    </div>
     {% empty %}
         <p>No hay publicacion</p>
     {% endfor %}
 
-<h1>Ultimas audios</h1>
-    {% for audio in ultimos_audios %}
-        {{audio.titulo}}
-    {% empty %}
-        <p>No hay audio</p>
-    {% endfor %}
+  <div class="large-4 columns">
+    <h1 class="text-title-1">Audio</h1>
+  </div>
+</div><!--large-12 content- publicaciones -->
 
+</div><!--row content final -->
+  
 {% endblock contenido %}
