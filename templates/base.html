@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="{% static 'css/normalize.css' %}" /> 
 	<link rel="stylesheet" href="{% static 'css/foundation.css' %}" /> 
 	<link rel="stylesheet" href="{% static 'css/global.css' %}" />
+	
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
 	<script src="{% static 'js/vendor/custom.modernizr.js' %}"></script>
@@ -55,9 +56,10 @@
 <script src="{% static 'js/foundation/foundation.reveal.js' %}"></script> 
 <script src="{% static 'js/foundation/foundation.section.js' %}"></script> 
 <script src="{% static 'js/foundation/foundation.tooltips.js' %}"></script> 
-<script src="{% static 'js/foundation/foundation.topbar.js' %}"></script> 
+<script src="{% static 'js/foundation/foundation.topbar.js' %}"></script>
+<script src="{% static 'js/audio.min.js' %}"></script> 
+{% block extra_js %}{% endblock extra_js %}
 <script> $(document).foundation(); </script>
-
 {% include "footer.html" %}
 
 </body>
