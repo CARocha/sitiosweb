@@ -1,12 +1,72 @@
 {% extends "base.html" %}
-
+{% load thumbnail %}
 {% block contenido %}
-    <h2>Noticias</h2>
-    <ul>
-        {% for noticia in object_list %}
-            <li><a href="{{ noticia.get_absolute_url }}">{{ noticia.titulo }}</a></li>
-            <li>{{ noticia.fecha }}</li>
-            <li>{{ noticia.descripcion|striptags|safe|truncatewords:16 }}</li>
+
+<div class="row">
+<div class="large-12 page-title columns"> 
+<ul class="breadcrumbs">
+  <li><a href="#">Inicio</a></li>
+  <li class="current"><a href="#">Noticias</a></li>
+</ul>
+</div>
+ <div class="large-12 bg-single columns">
+ 
+   <div class="large-9 columns">
+     <div class="box-tabs">
+      <div class="tabb"><a href="#">Viviendo con Vih</a></div>
+      <div class="tabb"><a href="#">Ninez y adolescencia</a></div>
+     </div>
+     <div class="post-news">
+     {% for noticia in object_list %}
+       <div class="list-post-news">
+       	{% for imagen in noticia.fotos.all|slice:"1" %}
+	       	{% thumbnail imagen.imagen "140x100" crop="10%" as img %}
+	            <div class="img-news"><a href="{{noticia.get_absolute_url}}"><img src="/media/{{img}}"></a></div>
+	        {% endthumbnail %}          
         {% endfor %}
+        <h2 class="title-news"><a href="{{noticia.get_absolute_url}}">{{noticia.titulo}}</a></h2>
+        <div class="text-news">{{ noticia.descripcion|striptags|safe|truncatewords:16 }}</div>
+        <a class="tiny button" href="{{noticia.get_absolute_url}}">Leer m&aacutes</a>
+      </div>
+	{% endfor %}
+     </div>
+  <div class="paginador">
+    <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li class="arrow unavailable"><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+    {% endif %}
+    {% for numero in page_obj.paginator.page_range %}
+      <li class="{%if numero == 1 %}current{%endif%}"><a href="?page={{numero}}">{{numero}}</a></li>
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li class="arrow"><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+    {% endif %}
     </ul>
+  </div>
+   </div>
+
+  <div class="large-3 columns">
+    <div class="box-red"> Viviendo con VIH</div>
+    <div class="box-blue"> El programa conoce mas.</div>
+    <div class="title-sidebar-1">Eventos</div>
+    <div class="event-sidebar">
+      <div class="calendar-icon">10 mayo</div>
+      <div class="text-sidebar">Titulo evento</div>
+      <div class="calendar-icon">10 mayo</div>
+      <div class="text-sidebar">Titulo evento</div>
+      <div class="calendar-icon">10 mayo</div>
+      <div class="text-sidebar">Titulo evento</div>
+    </div>
+    <br>
+    <div class="title-sidebar-2">Contactenos</div>
+    <div class="text-box">
+      Para mayor informacion:
+      Direccion: <br>Busto Jose marti 100 al sur
+      Email: info@info.com
+   
+    </div>
+  </div>
+
+ </div>
+</div>
 {% endblock %}
