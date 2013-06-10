@@ -30,6 +30,7 @@ def index(request, template='index.html'):
 
 class NoticiasList(ListView):
     model = Noticias
+    paginate_by = 4
 
 class NoticiasDetailView(DetailView):
     model = Noticias

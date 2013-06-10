@@ -1,12 +1,51 @@
 {% extends "base.html" %}
 
+{% load thumbnail%}
+
 {% block contenido %}
-	<ul>
-            <li>{{ object.titulo }}</li>
-           
-            <li>{{ object.fecha }}</li>
-            <li>{{ object.descripcion|safe }}</li>
-            
-        
-    </ul>
+<div class="row">
+ <div class="large-12 page-title columns">{{object.titulo}}</div>
+ <div class="large-12 bg-single columns">
+ 
+   <div class="large-9  columns">
+     <div class="pg-single">
+	{% for imagen in object.fotos.all %}
+		{% thumbnail imagen.imagen "480x280" crop="1%" as img %}
+			<div class="img-pagina"><img src="/media/{{img}}"></div>
+	    {% endthumbnail %} 
+	{%endfor%}
+      <span class="author">Publicado por: {{object.autor}}</span><br>
+      <span class="dates">fecha:{{object.fecha|date:"j/m/Y"}}</span>
+      <div class="text-pages">
+      	{{object.descripcion|safe}}
+	  </div>
+     </div>
+  
+   </div>
+
+  <div class="large-3 columns">
+    <div class="title-sidebar-3">Noticias</div>
+    <div class="news-sidebar">
+      
+      <div class="text-news-side">Titulo evento</div>
+      <div class="text-news-side">Titulo evento</div>
+      <div class="text-news-side">Titulo evento</div>
+      <div class="read-more-side"><a href="#">Leer mas</a></div>
+    </div>
+    
+    
+    <div class="title-sidebar-1">Eventos</div>
+    <div class="event-sidebar">
+      <div class="calendar-icon">10 mayo</div>
+      <div class="text-sidebar">Titulo evento</div>
+      <div class="calendar-icon">10 mayo</div>
+      <div class="text-sidebar">Titulo evento</div>
+      <div class="calendar-icon">10 mayo</div>
+      <div class="text-sidebar">Titulo evento</div>
+    </div>
+  </div>
+
+ </div>
+
+</div>
 {% endblock contenido %}
