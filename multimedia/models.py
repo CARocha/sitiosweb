@@ -31,7 +31,8 @@ class Audio(models.Model):
 	audio = models.FileField(upload_to=get_file_path, null=True, blank=True)
 	tags_audio = TagAutocompleteField("Tags",help_text='Separar elementos con "," ', 
 						              null=True, blank=True)
-
+	fileDir = 'audios/'
+	
 	def __unicode__(self):
 		return self.nombre
 	class Meta:
