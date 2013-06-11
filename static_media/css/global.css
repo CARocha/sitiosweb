@@ -70,7 +70,19 @@ h2{ font-size: 18px;}
 .video-sample{ background: #000; 
 				color: #fff; width: 209px; height: 180px; margin: 9px;   float: left; }
 .audio-box{ width: 320px;  background: #000;}
-.audiojs{ width: 320px;}
+.audiojs{ width: 340px;}
+.audiojs .scrubber {
+position: relative;
+float: left;
+width: 180px;
+background: #5a5a5a;
+height: 14px;
+margin: 10px;
+border-top: 1px solid #3f3f3f;
+border-left: 0px;
+border-bottom: 0px;
+overflow: hidden;
+}
 .tabb{ background-color: #3398dc; border: none; margin-top: 10px; 
 	   margin-left:5px; padding: 10px; float: left;}
 .tabb a{ color: #fff;}
@@ -84,10 +96,11 @@ h2{ font-size: 18px;}
 		   -webkit-border-radius: 6px; margin-bottom: 15px;
 		    border-radius: 6px;}
 
-.img-pagina{ margin: 10px;}
+.img-pagina{ margin-bottom: 10px;}
 .text-pages{ margin: 10px;  text-align: justify;}
-.img-pagina img{ border: 2px #ecf0f1 solid;}
+.img-pagina img{ border: 2px #95a5a6 solid;}
 .author, .dates{margin: 10px; font-size: 12px;}
+.thumbs{ margin-bottom: 10px;}
 
 /* page single*/
 
@@ -105,7 +118,8 @@ h2{ font-size: 18px;}
 .title-sidebar-2{ padding: 10px; background: #27ae61; margin-top: 10px; color: #fff;clear: both;}
 .title-sidebar-3{ padding: 10px; background: #2a80b9; margin-top: 10px; color: #fff;clear: both;}
 .text-box{padding: 10px;}
-.text-news-side{ margin-top: 10px; margin-left: 10px;}
+.text-news-side{ margin-top: 15px; margin-left: 10px; font-size: 13px;}
+.text-news-side { list-style:square;}
 .news-sidebar{ margin-bottom: 40px;  }
 
 /***eventos ****/
@@ -116,9 +130,9 @@ h2{ font-size: 18px;}
 .calendar-icon-front{ float: right; clear: left;  margin-top: 10px; margin-right: 10px;
 				width: 35px; height: 35px; background: url(../img/calendar.png);
 				padding-top: 15px; font-size: 9px;text-align: center;}						   		  
-.text-sidebar{ margin-top: 20px; float: left;  }
-.read-more-side{ background: #2a80b9; color: #fff; padding: 5px; float: left; margin-top: 10px;
-			margin-bottom: 10px; clear:both; margin-left: 10px; font-size: 12px;}
+.text-sidebar{ margin-top: 20px;  }
+.read-more-side{ background: #2a80b9; color: #fff; padding: 5px;  margin-top: 10px; width: 70px;
+			margin-bottom: 20px;  font-size: 12px;  }
 .read-more-side a{color: #fff;}
 .read-more-side a:hover{  text-decoration: underline; }			
 /*** sidebar ***/
