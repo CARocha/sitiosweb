@@ -29,7 +29,8 @@ h2{ font-size: 18px;}
 .list-news{ width: 450px; float: left;   }
 .title-news a { font-size: 14px; padding-top: 10px; color: #464749;  }
 .title-news a:hover{ color: #7f8c8d;}
-.img-news{ float: left; padding: 10px;}
+.img-news{ float: left; padding: 10px; }
+.img-news img {border: 2px #bdc3c7 solid;}
 .text-news{ float: left; width: 300px;}
 .read-more{ float: left; margin-left: 20em;  background:#34495e; color: #fff; padding: 10px;
 			margin-bottom: 10px; }
@@ -40,19 +41,27 @@ h2{ font-size: 18px;}
 
 /*post news list*/
 .post-news{  background: #ecf0f1; float: left; margin-bottom: 15px;}
-.list-post-news{ float: left; width: 70%; margin-top: 20px;}
+.list-post-news{ float: left;  margin-top: 20px; border-bottom: 1px dashed #bdc3c7;
+				 margin-left: 10px; margin-bottom: 10px; margin-right: 10px; }
 
+.more-news{ float: right; margin-left: 20em;  background:#34495e; color: #fff; padding: 5px;
+			margin-bottom: 10px; }
+.more-news:hover{color:#fff;}
+.text-news-list{  }						 
 /*orbit bullets*/
 .orbit-bullets {
   margin: 0 auto 30px auto;
   overflow: hidden;
   position: relative;
+
   left: 20px;
   top: -30px; }
+.orbit-bullets li.active {
+      background: #fff; }  
 .orbit-bullets li {
     display: block;
-    width: 5px;
-    height: 5px;}
+    width: 11px;
+    height: 11px;}
 
 /*post news list*/
 
@@ -67,6 +76,7 @@ h2{ font-size: 18px;}
 .tabb a{ color: #fff;}
 .tabb:active{background: #bec3c7;}
 .box-tabs{ float: right;}
+
 
 /* page single*/
 
@@ -102,7 +112,10 @@ h2{ font-size: 18px;}
 .event-sidebar{ margin-bottom: 20px; float: left; }
 .calendar-icon{ float: left; clear: left;  margin-top: 10px; margin-right: 10px;
 				width: 35px; height: 35px; background: url(../img/calendar.png);
-				padding-top: 15px; font-size: 9px;text-align: center;}		   		  
+				padding-top: 15px; font-size: 9px;text-align: center;}
+.calendar-icon-front{ float: right; clear: left;  margin-top: 10px; margin-right: 10px;
+				width: 35px; height: 35px; background: url(../img/calendar.png);
+				padding-top: 15px; font-size: 9px;text-align: center;}						   		  
 .text-sidebar{ margin-top: 20px; float: left;  }
 .read-more-side{ background: #2a80b9; color: #fff; padding: 5px; float: left; margin-top: 10px;
 			margin-bottom: 10px; clear:both; margin-left: 10px; font-size: 12px;}
@@ -119,7 +132,7 @@ h2{ font-size: 18px;}
 .paginador{float: left;}
 
 /**** eventos-front-page ****/
-.eventos{ clear: both;  background: #a7acaf; float: left; }
+.eventos{ clear: both;  background: #a7acaf; float: left; margin-bottom: 15px; }
 .box-event{ -webkit-border-radius: 5px;  margin: 10px; width: 200px; float: left;
                border-radius: 5px;  height: 100px; background: #8a9295;
            }

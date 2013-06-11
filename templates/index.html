@@ -101,8 +101,11 @@
   <div class="eventos">
   {% for evento in ultimos_eventos %}
     <div class="box-event">
+      <div class="calendar-icon-front">{{evento.fecha_inicio|date:"j M"}}</div>
       <h2 class="title-event">{{evento.titulo}}</h2>
+
       <div class="descripcion">{{ evento.descripcion|striptags|safe|truncatewords:10 }}</div>
+
     </div>
     {% empty %}
         <p>No hay evento</p>
