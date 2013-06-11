@@ -1,0 +1,18 @@
+  <div class="large-3 columns">
+    <div class="box-red"> Viviendo con VIH</div>
+    <div class="box-blue"> El programa conoce mas.</div>
+    <div class="title-sidebar-1">Eventos</div>
+    <div class="event-sidebar">
+    {% for obj in eventos %}
+      <div class="calendar-icon">{{obj.fecha_inicio|date:"j M"}}</div>
+      <div class="text-sidebar">{{obj.titulo}}</div>
+    {% endfor %}
+    </div>
+    <br>
+    <div class="title-sidebar-2">Contactenos</div>
+    <div class="text-box">
+      Para mayor informacion:
+      Direccion: <br>Busto Jose marti 100 al sur
+      Email: info@info.com
+    </div>
+  </div>
