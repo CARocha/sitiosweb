@@ -41,8 +41,13 @@ h2{ font-size: 18px;}
 
 /*post news list*/
 .post-news{  background: #ecf0f1; float: left; margin-bottom: 15px;}
-.list-post-news{ float: left; width: 70%; margin-top: 20px;}
+.list-post-news{ float: left;  margin-top: 20px; border-bottom: 1px dashed #bdc3c7;
+				 margin-left: 10px; margin-bottom: 10px; margin-right: 10px; }
 
+.more-news{ float: right; margin-left: 20em;  background:#34495e; color: #fff; padding: 5px;
+			margin-bottom: 10px; }
+.more-news:hover{color:#fff;}
+.text-news-list{  }						 
 /*orbit bullets*/
 .orbit-bullets {
   margin: 0 auto 30px auto;
@@ -71,6 +76,7 @@ h2{ font-size: 18px;}
 .tabb a{ color: #fff;}
 .tabb:active{background: #bec3c7;}
 .box-tabs{ float: right;}
+
 
 /* page single*/
 
