@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'noticias.views.index', name='index'),
+    url(r'^multimedia/$', 'noticias.views.multimedia_publicacion', name='multimedia_publicacion'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^noticias/', include('noticias.urls')),
     url(r'^eventos/', include('eventos.urls')),

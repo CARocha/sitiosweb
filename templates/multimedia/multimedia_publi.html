@@ -1,37 +1,14 @@
 {% extends "base.html" %}
-{% load thumbnail%}
 
 {% block contenido %}
+
 <div class="row">
  <div class="large-12 page-title columns">{{object.titulo}}</div>
  <div class="large-12 bg-single columns">
  
    <div class="large-9  columns">
      <div class="pg-single">
-  <div id="slider1">
-  	{% for imagen in object.fotos.all %}
-  		{% thumbnail imagen.imagen "480x280" crop="1%" as img %}
-  			<div class="img-pagina"><img src="/media/{{img}}"></div>
-  	  {% endthumbnail %} 
-  	{%endfor%}
-  </div>
-  {% if object.fotos.all.count > 1%}
-  <div class="thumbs">
-  {% for imagen in object.fotos.all%}
-    {% thumbnail imagen.imagen "79x79" crop="1%" as img %}
-      <a href="#"><img width="65" height="65" src="/media/{{img}}"></a>
-    {% endthumbnail %} 
-  {% endfor %}
-    <div class="clean"></div>
-  </div>
-  {%endif%}
-
-
-      <span class="author">Publicado por: {{object.autor}}</span><br>
-      <span class="dates">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} hasta {{object.fecha_finalizacion|date:"j/m/Y"}}</span>
-      <div class="text-pages">
-      	{{object.descripcion|safe}}
-	  </div>
+      
      </div>
   
    </div>
@@ -59,4 +36,5 @@
  </div>
 
 </div>
+  
 {% endblock contenido %}

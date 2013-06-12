@@ -1,4 +1,11 @@
 from django.contrib import admin
 from .models import Eventos
+from multimedia.models import *
 
-admin.site.register(Eventos)
+class FotosAdmin(generic.GenericTabularInline):
+	model = Fotos
+
+class EventosAdmin(admin.ModelAdmin):
+	inlines = [FotosAdmin]
+
+admin.site.register(Eventos, EventosAdmin)

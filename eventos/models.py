@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django.core.urlresolvers import reverse
 from tagging_autocomplete.models import TagAutocompleteField
+from geoposition.fields import GeopositionField
 
 # Create your models here.
 class Eventos(models.Model):
@@ -16,6 +17,7 @@ class Eventos(models.Model):
     fecha_inicio = models.DateField()
     fecha_finalizacion = models.DateField()
     descripcion = RichTextField('Descripción')
+    position = GeopositionField(null=True, blank=True)
     fotos = generic.GenericRelation(Fotos)
     categoria= TagAutocompleteField(help_text='Separar elementos con "," ', 
                                     null=True, blank=True)
