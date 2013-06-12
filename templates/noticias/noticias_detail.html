@@ -42,7 +42,7 @@
      <div class="pg-single">
   <div id="slider1">
   	{% for imagen in object.fotos.all %}
-  		{% thumbnail imagen.imagen "480x280" crop="30%" as img %}
+  		{% thumbnail imagen.imagen "580x280" crop="30%" as img %}
   			<div class="img-pagina"><img src="/media/{{img}}"></div>
   	  {% endthumbnail %} 
   	{%endfor%}
