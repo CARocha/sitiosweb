@@ -19,7 +19,7 @@ ul.menu-rapido{margin: 0; padding: 0;}
 .orbit-timer{visibility: hidden;}								   
 /**** Header ****/
 
-.top-content{ background: #ecf0f1; }
+.top-content{ background: #f4f4f4; }
 .welcome{ color:#3498db; font-size: 18px; margin-top: 20px;  }
 .text-welcome{font-size: 14px; text-align: justify; color: #34495e; margin-bottom: 10px;}
 
@@ -176,7 +176,7 @@ h2 { line-height: 1em;}
 .text-title-1{ color: #2980b9; font-size: 16px; margin-top: 10px; font-weight: bold; }
 /**** eventos-front-page ****/ 
 
-.content-pub{background: #ecf0f1;}
+.content-pub{background: #f4f4f4;}
 .pub-front{float: left; margin: 10px;}
 .title-pub{ font-size: 12px; }
 /**** footer ****/
