@@ -13,7 +13,8 @@
 	<link rel="stylesheet" href="{% static 'css/global.css' %}" />
 	
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-
+	<link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<script src="{% static 'js/vendor/custom.modernizr.js' %}"></script>
 
 </head>
@@ -22,8 +23,28 @@
 <!--header -->
 <div class="row">
 <div class="large-12 top-header columns">
+
 <a href="/"><div class="logo"></div></a>
+
+
+	<div class="redes-front">
+    <img src="/static/img/facebook.png">
+    <img src="/static/img/twitter.png">
+    </div>
+
+  <div class="large-3 search columns">
+  	<div class="row collapse">
+  <div class="small-8 columns">
+    <input type="text" />
+  </div>
+  
+    <a class="search-button">Buscar</a>
+  
+</div>
+  </div>
+
 <!--Menu principal -->
+
 <nav>
 	<ul class="main-menu">{% menu principal %}
 		{% for item in menuitems %}
@@ -36,7 +57,7 @@
 </div>
 </div>
 {% block contenido %}{% endblock contenido %}
-
+{% include "footer.html" %}
 <script> 
   document.write('<script src=' + 
 	('__proto__' in {} ? '/static/js/vendor/zepto' : '/static/js/vendor/jquery') + 
@@ -60,7 +81,7 @@
 <script src="{% static 'js/audio.min.js' %}"></script> 
 {% block extra_js %}{% endblock extra_js %}
 <script> $(document).foundation(); </script>
-{% include "footer.html" %}
+
 
 </body>
 </html>

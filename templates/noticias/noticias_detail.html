@@ -42,7 +42,7 @@
      <div class="pg-single">
   <div id="slider1">
   	{% for imagen in object.fotos.all %}
-  		{% thumbnail imagen.imagen "480x280" crop="1%" as img %}
+  		{% thumbnail imagen.imagen "580x280" crop="30%" as img %}
   			<div class="img-pagina"><img src="/media/{{img}}"></div>
   	  {% endthumbnail %} 
   	{%endfor%}
@@ -72,10 +72,16 @@
     <div class="title-sidebar-3">Noticias</div>
 
     <div class="news-sidebar">
+      
+        
+      
     {% for obj in noticias %}
-      <div class="text-news-side">{{obj.titulo}}</div>
+    <ul>
+     <li class="text-news-side"><a href="{{obj.get_absolute_url}}">{{obj.titulo}}</a></li>
+     </ul>
     {% endfor %}  
     <div class="read-more-side"><a href="/noticias/lista/">Leer m&aacutes</a></div>
+    
     </div>
     
     <div class="title-sidebar-1">Eventos</div>
