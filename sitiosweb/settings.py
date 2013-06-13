@@ -105,6 +105,7 @@ INSTALLED_APPS = (
     'tagging_autocomplete',
     'menu',
     'geoposition',
+    'embed_video',
 )
 
 # A sample logging configuration. The only tangible logging
