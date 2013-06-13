@@ -32,6 +32,9 @@
   });
 </script>
 {% endblock extra_js %}
+
+{% load embed_video_tags %}
+
 {% block contenido %}
 <!--header -->  
 <div class="row">
@@ -96,9 +99,12 @@
  <div class="large-6   columns">
     <div class="title-bar">Multimedia - ultimos videos</div>
     <div class="video-box">
-      <div class="video-sample">Video 1</div>
-      <div class="video-sample">Video 2</div>
-    
+    {% for obj in ultimos_videos %}
+      <div class="video-sample">{% video obj.url as video %}
+                                <a data-reveal-id="videoModal-{{obj.id}}" href=""><img src="{{ video.thumbnail}}" alt=""></a>
+                                {% endvideo %}
+      </div>
+    {% endfor %}
     </div>
   <div class="title-bar">Proximos eventos</div>
   <div class="eventos">
@@ -155,4 +161,18 @@
 
 
 </div><!--row content final -->
+
+{% for obj in ultimos_videos %}
+  <div id="videoModal-{{obj.id}}" class="reveal-modal medium">
+  <h2>{{obj.nombre}}</h2>
+  <div class="flex-video">
+    {% video obj.url as video %}
+      {{video|embed:"640x480"}}  
+    {% endvideo %}
+  </div>
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+{% endfor %}
+
 {% endblock contenido %}
