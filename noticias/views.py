@@ -21,11 +21,11 @@ def index(request, template='index.html'):
     ultimos_audios = Audio.objects.order_by('-id')[0:4]
     
     return render(request, template, {'ultimas_noticias':ultimas_noticias,
-                                                               'ultimas_destacadas':ultimas_destacadas,
-                                                               'ultimos_videos':ultimos_videos,
-                                                               'ultimos_eventos':ultimos_eventos,
-                                                               'ultimas_publicaciones':ultimas_publicaciones,
-                                                               'ultimos_audios':ultimos_audios})
+                                       'ultimas_destacadas':ultimas_destacadas,
+                                       'ultimos_videos':ultimos_videos,
+                                       'ultimos_eventos':ultimos_eventos,
+                                       'ultimas_publicaciones':ultimas_publicaciones,
+                                       'ultimos_audios':ultimos_audios})
 
 
 class NoticiasList(ListView):
@@ -36,9 +36,9 @@ class NoticiasDetailView(DetailView):
     model = Noticias
 
 def multimedia_publicacion(request, template='multimedia/multimedia_publi.html'):
-  ultimas_publicaciones = Publicaciones.objects.order_by('-id')[0:3]
+  ultimas_publicaciones = Publicaciones.objects.order_by('-id')[0:4]
   ultimos_audios = Audio.objects.order_by('-id')[0:4]
-  ultimos_videos = Videos.objects.order_by('-id')[0:2]
+  ultimos_videos = Videos.objects.order_by('-id')[0:4]
 
   return render(request, template, { 'ultimos_videos':ultimos_videos,
                                      'ultimas_publicaciones':ultimas_publicaciones,
