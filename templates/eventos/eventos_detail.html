@@ -1,32 +1,61 @@
 {% extends "base.html" %}
 {% load thumbnail%}
 
+{% block extra_js %}
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script>
+  function initialize() {
+  var myLatlng = new google.maps.LatLng({{object.position}});
+  var mapOptions = {
+    zoom: 12,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Hola!'
+  }); 
+};
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+{% endblock extra_js %}
+
 {% block contenido %}
+
+<style>
+  #map-canvas {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    height: 250px;
+  }
+</style>
 <div class="row">
  <div class="large-12 page-title columns">{{object.titulo}}</div>
  <div class="large-12 bg-single columns">
  
    <div class="large-9  columns">
      <div class="pg-single">
-  <div id="slider1">
-  	{% for imagen in object.fotos.all %}
-  		{% thumbnail imagen.imagen "480x280" crop="1%" as img %}
-  			<div class="img-pagina"><img src="/media/{{img}}"></div>
-  	  {% endthumbnail %} 
-  	{%endfor%}
+  <div class="large-block-3 columns">
+  {% if object.fotos.all %}
+    {% for imagen in object.fotos.all|slice:"1" %}
+      {% thumbnail imagen.imagen "300x250" crop="1%" as img %}
+        <div class="img-pagina"><img src="/media/{{img}}"></div>
+      {% endthumbnail %} 
+    {%endfor%}
+  {% else %}
+    <div class="img-pagina"><img src="http://placehold.it/300x250"></div>
+  {% endif %}
+    
   </div>
-  {% if object.fotos.all.count > 1%}
-  <div class="thumbs">
-  {% for imagen in object.fotos.all%}
-    {% thumbnail imagen.imagen "79x79" crop="1%" as img %}
-      <a href="#"><img width="65" height="65" src="/media/{{img}}"></a>
-    {% endthumbnail %} 
-  {% endfor %}
-    <div class="clean"></div>
+  <div class="large-block-3 columns">
+    <div id="map-canvas"></div>
   </div>
-  {%endif%}
-
-
       <span class="author">Publicado por: {{object.autor}}</span><br>
       <span class="dates">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} hasta {{object.fecha_finalizacion|date:"j/m/Y"}}</span>
       <div class="text-pages">
@@ -50,7 +79,7 @@
     <div class="event-sidebar">
     {% for obj in eventos %}
       <div class="calendar-icon">{{obj.fecha_inicio|date:"j M"}}</div>
-      <div class="text-sidebar">{{obj.titulo}}</div>
+      <div class="text-sidebar"><a href="{{obj.get_absolute_url}}">{{obj.titulo}}</a></div>
     {% endfor %}
     </div>
 
