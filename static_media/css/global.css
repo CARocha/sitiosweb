@@ -185,9 +185,13 @@ h2 { line-height: 1em;}
 .text-title-1{ color: #2980b9; font-size: 16px; margin-top: 10px; font-weight: bold; }
 /**** eventos-front-page ****/ 
 
+/**** Publicaciones ****/ 
 .content-pub{background: #f4f4f4;}
 .pub-front{float: left; margin: 10px;}
 .title-pub{ font-size: 12px; }
+.pub-detail{ margin-right: 10px; float: left; margin-bottom: 2em;}
+.descargar{}
+/**** Publicaciones ****/ 
 /**** footer ****/
 .footer{ background: #c1392b; height: 100px;}
 .footer-menu{  margin-top: 2em; }
