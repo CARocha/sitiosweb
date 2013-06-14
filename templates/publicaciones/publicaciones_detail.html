@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-    <ul>
-            <li>{{ object.titulo }}</li>
-           
-            <li>{{ object.fecha }}</li>
-            <li>{{ object.descripcion|safe }}</li>
+<div class="row">
+<div class="large-12 page-title columns">{{object.titulo}}</div>
+  <div class="large-12 bg-single columns">
+  	<span class="dates">{{ object.fecha }}</span>
+   <div class="text-pages">{{ object.descripcion|safe }}</div>
+    
             
-        
-    </ul>
+           
+          
+      
+            
+    
+  </div>
+  </div>
 {% endblock contenido %}

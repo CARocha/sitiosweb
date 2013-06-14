@@ -2,15 +2,18 @@
 {% load thumbnail %}
 {% block contenido %}
 
+  <div class="pag-title">
+    <div class="row">
+      <div class="large-12 page-title columns">Noticias</div>
+    </div>
+   </div>
+  
+<div class="bg-single">
+
+
 <div class="row">
-<div class="large-12 page-title columns"> 
-<ul class="breadcrumbs">
-  <li><a href="#">Inicio</a></li>
-  <li class="current"><a href="#">Noticias</a></li>
-</ul>
-</div>
  <div class="large-12 bg-single columns">
- 
+
    <div class="large-9 columns">
      <div class="box-tabs">
       <div class="tabb"><a href="{% url 'noticias_categoria' 'vih' %}">Viviendo con Vih</a></div>
@@ -47,5 +50,6 @@
   {% include "sidebar_lista.html" %}
 
  </div>
+</div>
 </div>
 {% endblock %}
