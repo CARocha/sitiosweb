@@ -41,21 +41,22 @@ google.maps.event.addDomListener(window, 'load', initialize);
  
    <div class="large-9  columns">
      <div class="pg-single">
-  <div class="large-block-3 columns">
+
+  <ul class="large-block-grid-2">
   {% if object.fotos.all %}
     {% for imagen in object.fotos.all|slice:"1" %}
       {% thumbnail imagen.imagen "300x250" crop="1%" as img %}
-        <div class="img-pagina"><img src="/media/{{img}}"></div>
+        <li><div class="img-pagina"><img src="/media/{{img}}"></div></li>
       {% endthumbnail %} 
     {%endfor%}
   {% else %}
-    <div class="img-pagina"><img src="http://placehold.it/300x250"></div>
+    <li><div class="img-pagina"><img src="http://placehold.it/300x250"></div></li>
   {% endif %}
     
-  </div>
-  <div class="large-block-3 columns">
-    <div id="map-canvas"></div>
-  </div>
+    <li><div id="map-canvas"></div></li>
+  </ul>
+
+
       <span class="author">Publicado por: {{object.autor}}</span><br>
       <span class="dates">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} hasta {{object.fecha_finalizacion|date:"j/m/Y"}}</span>
       <div class="text-pages">
