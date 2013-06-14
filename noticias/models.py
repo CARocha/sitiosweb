@@ -7,6 +7,7 @@ from multimedia.models import Fotos
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django.core.urlresolvers import reverse
+from tagging.models import Tag
 from tagging_autocomplete.models import TagAutocompleteField
 
 # Create your models here.
@@ -29,8 +30,8 @@ class Noticias(models.Model):
     def get_absolute_url(self):
         return reverse('noticias_detalle', kwargs={'slug': self.slug})
 
-    #def get_tags(self):
-    #    return Tag.objects.get_for_object(self)
+    def get_tags(self):
+        return Tag.objects.get_for_object(self)
 
     class Meta:
         verbose_name = 'Noticia'

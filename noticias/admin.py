@@ -16,6 +16,7 @@ class FotosAdmin(generic.GenericTabularInline):
 
 class NoticiasAdmin(admin.ModelAdmin):
 	inlines = [FotosAdmin]
+	list_display = ['titulo','fecha','autor', 'get_tags']
 
 
 class FlatpageForm(FlatpageFormOld):
