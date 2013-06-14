@@ -37,6 +37,7 @@
 
 {% block contenido %}
 <!--header -->  
+<div class="top-content">
 <div class="row">
   <div class="large-12 top-content columns">
 
@@ -70,8 +71,9 @@
   </div>
 
   </div>
+  </div>
   </div><!--row top content  final -->  
-
+<div class="content">
 <div class="row">
 <div class="large-12 content columns">
 
@@ -121,9 +123,12 @@
 
   </div>
   
+</div>
 </div><!--large-12 content-principal  -->
 </div>
-
+</div>
+<div class="content-pub">
+<div class="row">
 <div class="large-12 content-pub columns">
   <div class="large-7 columns">
     <h1 class="text-title">Publicaciones</h1>
@@ -147,7 +152,7 @@
     <h1 class="text-title-1">Ultimos audios</h1>
     <div class="audio-box">
       <audio preload></audio>
-      <ol>
+      <ol class="audio-player">
         {% for obj in ultimos_audios %}
             <li><a href="#" data-src="/media/{{obj.audio}}">{{obj.nombre}}</a></li>
         {% empty %}
@@ -161,7 +166,7 @@
 
 
 </div><!--row content final -->
-
+</div>
 {% for obj in ultimos_videos %}
   <div id="videoModal-{{obj.id}}" class="reveal-modal medium">
   <h2>{{obj.nombre}}</h2>
