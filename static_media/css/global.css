@@ -192,6 +192,8 @@ h2 { line-height: 1em;}
 .pub-detail{ margin-right: 10px; float: left; margin-bottom: 2em;}
 .descargar{}
 /**** Publicaciones ****/ 
+.event-image{float:left; margin-right: 2em; clear: both;}
+.event-info-date{ float: left;}
 /**** footer ****/
 .footer{ background: #c1392b; height: 100px;}
 .footer-menu{  margin-top: 2em; }

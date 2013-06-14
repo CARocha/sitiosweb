@@ -37,35 +37,42 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </style>
 <div class="row">
  <div class="large-12 page-title columns">{{object.titulo}}</div>
- <div class="large-12 bg-single columns">
- 
-   <div class="large-9  columns">
-     <div class="pg-single">
+ </div class="bg-single"></div>
+ <div class="bg-single ">
+<div class="row">
 
-  <ul class="large-block-grid-2">
-  {% if object.fotos.all %}
-    {% for imagen in object.fotos.all|slice:"1" %}
-      {% thumbnail imagen.imagen "300x250" crop="1%" as img %}
-        <li><div class="img-pagina"><img src="/media/{{img}}"></div></li>
-      {% endthumbnail %} 
-    {%endfor%}
-  {% else %}
-    <li><div class="img-pagina"><img src="http://placehold.it/300x250"></div></li>
-  {% endif %}
+ <div class="large-12 columns">
+
+  <div class="large-9  columns">
+    <div class="pg-single">
+        <div class="event-image">
+        {% if object.fotos.all %}
+          {% for imagen in object.fotos.all|slice:"1" %}
+            {% thumbnail imagen.imagen "300x250" crop="1%" as img %}
+                <div class="img-pagina"><img src="/media/{{img}}"></div>
+            {% endthumbnail %} 
+          {%endfor%}
+       {% else %}
+         <li><div class="img-pagina"><img src="http://placehold.it/300x250"></div></li>
+      {% endif %}
+
+        </div>
     
-    <li><div id="map-canvas"></div></li>
-  </ul>
-
-
-      <span class="author">Publicado por: {{object.autor}}</span><br>
-      <span class="dates">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} hasta {{object.fecha_finalizacion|date:"j/m/Y"}}</span>
+    <div id="map-canvas"></div>
+  
+    
+    
+  <span class="event-info-date">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} hasta {{object.fecha_finalizacion|date:"j/m/Y"}}</span>
       <div class="text-pages">
-      	{{object.descripcion|safe}}
-	  </div>
-     </div>
+        {{object.descripcion|safe}}
+       </div>
+
+
+  
+    </div>
   
    </div>
-
+  
   <div class="large-3 columns">
     <div class="title-sidebar-3">Noticias</div>
 
@@ -86,7 +93,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
   </div>
 
- </div>
+ 
 
+</div>
+</div>
 </div>
 {% endblock contenido %}
