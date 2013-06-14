@@ -43,3 +43,7 @@ def multimedia_publicacion(request, template='multimedia/multimedia_publi.html')
   return render(request, template, { 'ultimos_videos':ultimos_videos,
                                      'ultimas_publicaciones':ultimas_publicaciones,
                                      'ultimos_audios':ultimos_audios})
+
+def filtro_categoria(request,categoria,template='noticias/noticias_list.html'):
+    object_list = Noticias.objects.filter(categoria=categoria)
+    return render(request, template, {'object_list':object_list})
