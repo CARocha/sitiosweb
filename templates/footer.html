@@ -1,19 +1,19 @@
+{% load menubuilder %}
 <div class="footer">
 <div class="row">
   <div class="large-12 footer columns">
 
-    <ul class="small-9 footer-menu columns">
-      <li><a href="#">Nosotros</a></li>
-      <li><a href="#">Ninez y adolescencia</a></li>
-      <li><a href="#">Viviendo con VIH</a></li>
-      <li><a href="#">Multimedia y publicaciones</a></li>
-    </ul>
+        <ul class="small-9 footer-menu columns">{% menu principal %}
+        {% for item in menuitems %}
+          <li><a href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} class='current'{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}  
+        </ul>
 
   <div class="small-2 redes-sociales columns">
     <img src="/static/img/facebook.png">
     <img src="/static/img/twitter.png">
   </div>
-    
+    Powered by <a href="https://www.djangoproject.com/">Django</a>
   </div>
 </div>
 </div>
