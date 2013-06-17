@@ -207,7 +207,7 @@ ol{}
 .pg-single{background: #ecf0f1; margin-top: 10px; padding: 10px;
 		   -webkit-border-radius: 6px; margin-bottom: 15px;
 		    border-radius: 6px;}
-
+.box-red a{ color: #fff;}
 .img-pagina{ margin-bottom: 10px;}
 .text-pages p span{ font-family: 'Open Sans', sans-serif;}
 .text-pages{ margin: 10px;  text-align: justify; }
@@ -251,10 +251,15 @@ ol{}
 				width: 35px; height: 35px; background: url(../img/calendar.png);
 				padding-top: 15px; font-size: 9px;text-align: center; color: #fff;}						   		  
 .text-sidebar{ margin-top: 15px;  font-size: 14px; }
+.text-sidebar a{ color: #222222;}
 .read-more-side{ background: #2a80b9; color: #fff; padding: 5px;  margin-top: 10px; width: 70px;
 			margin-bottom: 25px;  font-size: 12px;  }
 .read-more-side a{color: #fff;}
-.read-more-side a:hover{  text-decoration: underline; }			
+.read-more-side a:hover{  text-decoration: underline; }
+
+.event-image{float:left; margin-right: 2em; clear: both;}	
+.text-pages-event{	 }
+.event-info-date{ font-size: 12px;  }		
 /*** sidebar ***/
 
 
@@ -284,8 +289,7 @@ h2 { line-height: 1em;}
 .pub-detail{ margin-right: 10px; float: left; margin-bottom: 2em;}
 .descargar{}
 /**** Publicaciones ****/ 
-.event-image{float:left; margin-right: 2em; clear: both;}
-.event-info-date{ float: left;}
+
 /**** footer ****/
 .copyright{ font-size: 12px; clear: both; float: left; margin-bottom: 10px;  color: #fff; font-family: 'Open Sans', sans-serif;}
 .footer{ background: #c1392b; }

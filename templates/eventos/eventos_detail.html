@@ -62,8 +62,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
   
     
     
-  <span class="event-info-date">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} hasta {{object.fecha_finalizacion|date:"j/m/Y"}}</span>
-      <div class="text-pages">
+  <div class="event-info-date">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} hasta {{object.fecha_finalizacion|date:"j/m/Y"}}</div>
+      <div class="text-pages-event">
         {{object.descripcion|safe}}
        </div>
 
@@ -78,7 +78,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     <div class="news-sidebar">
     {% for obj in noticias %}
-      <div class="text-news-side">{{obj.titulo}}</div>
+      <div class="text-news-side"><a href="{{obj.get_absolute_url}}">{{obj.titulo}}</a></div>
     {% endfor %}  
     <div class="read-more-side"><a href="/noticias/lista/">Leer m&aacutes</a></div>
     </div>

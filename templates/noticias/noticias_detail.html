@@ -92,7 +92,7 @@
     <div class="event-sidebar">
     {% for obj in eventos %}
       <div class="calendar-icon">{{obj.fecha_inicio|date:"j M"}}</div>
-      <div class="text-sidebar">{{obj.titulo}}</div>
+      <div class="text-sidebar"><a href="{{obj.get_absolute_url}}">{{obj.titulo}}</a></div>
     {% endfor %}
     </div>
 
