@@ -302,8 +302,15 @@ nav.menu-footer{  clear: both;}
 .footer-menu li a:hover{ color: #fff;}
 .redes-sociales{ margin: 10px  0  5px  0; }
 .redes-front{ float: right; margin-top: 20px;}	
-.search {margin-top: 20px; float: right; }
-.search input{height: 23px;}
-.search-button{ padding: 5px; background: #ecf0f1; float: left;}
-a.search-button  { color: #7f8c8d; font-size: 13px; border: none;}				 
+.search {margin-top: 3px; float: right; }
+.googlesearch-form-inclusion{ }
+ #search-form{ float: left;}
+ #submit-button{float: left;}
+ input[type="submit"]{ color: #7f8c8d; font-size: 12px; border: none;  margin-left:auto;
+      margin-right:auto;}
+
+ input[type="text"]{ float: left; clear: both;	}
+.search input{height: 24px;}
+.search-button{ background: #ecf0f1; }
+a.search-button  { color: #7f8c8d; font-size: 11px; border: none;}				 
 /**** footer ****/
