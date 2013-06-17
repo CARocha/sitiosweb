@@ -47,7 +47,9 @@ ul.menu-rapido{margin: 0; padding: 0;}
 	
 }
 .nav-item a:hover {
-	background:#2a2e37;
+	background:#2582bc;
+	-webkit-border-radius: 4px; 
+	 border-radius: 4px;
 }
 /* Mobile Navigation */
 .nav-mobile {
@@ -207,7 +209,8 @@ ol{}
 		    border-radius: 6px;}
 
 .img-pagina{ margin-bottom: 10px;}
-.text-pages{ margin: 10px;  text-align: justify;}
+.text-pages p span{ font-family: 'Open Sans', sans-serif;}
+.text-pages{ margin: 10px;  text-align: justify; }
 .img-pagina img{ border: 2px #95a5a6 solid;}
 .author, .dates{margin: 12px; font-size: 11px; color: #7f8c8d;}
 .thumbs{ margin-bottom: 10px;}
