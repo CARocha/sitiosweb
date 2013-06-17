@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^tagging_autocomplete/', include('tagging_autocomplete.urls')),
     url('^pages/', include('django.contrib.flatpages.urls')),
     url(r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^search/', include('googlesearch.urls')),
     
 )
 

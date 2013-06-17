@@ -106,6 +106,7 @@ INSTALLED_APPS = (
     'menu',
     'geoposition',
     'embed_video',
+    'googlesearch',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -153,3 +154,5 @@ CKEDITOR_CONFIGS = {
         'uiColor': '#EEe',
     },
 }
+#google search id
+GOOGLE_SEARCH_PARTNER_ID = '008303288612978745529:mrverxh26vs'
