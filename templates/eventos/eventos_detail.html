@@ -61,8 +61,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div id="map-canvas"></div>
   
     
-    
-  <div class="event-info-date">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} hasta {{object.fecha_finalizacion|date:"j/m/Y"}}</div>
+    <br>
+  <div class="event-info-date">fecha del evento:{{object.fecha_inicio|date:"j/m/Y"}} &nbsp; hasta &nbsp; {{object.fecha_finalizacion|date:"j/m/Y"}}</div>
+  <br>
       <div class="text-pages-event">
         {{object.descripcion|safe}}
        </div>
