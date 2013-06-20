@@ -12,10 +12,14 @@ body { background: #e0e0e0; font-family: 'Open Sans', sans-serif; }
 .main-menu li a{ color: #fff;}
 .main-menu li a:hover{ color: #2a2e37;}
 .menu-rapido li a{  color: #7f8c8d; font-size: 14px; font-weight: bold; }
+.menu-rapido li a:hover{color: #222222;}
 ul.menu-rapido{margin: 0; padding: 0;}
 .menu-rapido li{ background-image:url(../img/genero.png);
 					background-repeat:no-repeat; list-style: none;
-					padding-left:2em; }	
+					padding-left:2em; }
+.menu-rapido li:hover{ background-image:url(../img/genero-hover.png);
+					background-repeat:no-repeat; list-style: none;
+					padding-left:2em; color: #222222; }							
 .orbit-timer{visibility: hidden;}	
 /* Navigation styling */
 .nav {
@@ -259,7 +263,15 @@ ol{}
 
 .event-image{float:left; margin-right: 2em; clear: both;}	
 .text-pages-event{	 }
-.event-info-date{ font-size: 12px;  }		
+.event-info-date{ font-size: 12px;
+				-webkit-border-radius: 1000px;
+				border-radius: 1000px;
+				font-weight: bold;
+				background: #2ba6cb;
+				padding: 0.1875em 0.5625em;
+				cursor: default;
+				color: white; width: 310px;
+				  }		
 /*** sidebar ***/
 
 
@@ -287,7 +299,7 @@ h2 { line-height: 1em;}
 .pub-front{float: left; margin: 10px;}
 .title-pub{ font-size: 12px; }
 .pub-detail{ margin-right: 10px; float: left; margin-bottom: 2em;}
-.descargar{}
+.descargar{font-size:12px; font-family: 'Open Sans', sans-serif; padding-left: 5px; }
 /**** Publicaciones ****/ 
 
 /**** footer ****/
