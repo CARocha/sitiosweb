@@ -326,3 +326,4 @@ nav.menu-footer{  clear: both;}
 .search-button{ background: #ecf0f1; }
 a.search-button  { color: #7f8c8d; font-size: 11px; border: none;}				 
 /**** footer ****/
+.video-container{ float: left; clear: both;}
