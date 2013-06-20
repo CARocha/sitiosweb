@@ -1,6 +1,39 @@
 {% extends "base.html" %}
 {% load thumbnail %}
 {% load embed_video_tags %}
+
+{% block extra_js %}
+  <script>
+  $(function() { 
+    // Setup the player to autoplay the next track
+    var a = audiojs.createAll({
+      trackEnded: function() {
+        var next = $('ol li.playing').next();
+        if (!next.length) next = $('ol li').first();
+        next.addClass('playing').siblings().removeClass('playing');
+        audio.load($('a', next).attr('data-src'));
+        audio.play();
+      }
+    });
+    
+    // Load in the first track
+    var audio = a[0];
+        first = $('ol a').attr('data-src');
+    $('ol li').first().addClass('playing');
+    audio.load(first);
+
+    // Load in a track on click
+    $('ol li').click(function(e) {
+      e.preventDefault();
+      $(this).addClass('playing').siblings().removeClass('playing');
+      audio.load($('a', this).attr('data-src'));
+      audio.play();
+    });
+    
+  });
+</script>
+{% endblock extra_js %}
+
 {% block contenido %}
 <div class="row">
 <div class="large-12 page-title columns">Multimedia y publicaciones</div>
@@ -25,7 +58,7 @@
     {% empty %}
         <p>No hay publicacion</p>
     {% endfor %}
-   <div class="button-more">ver mas</div>
+   <div class="button-more"><a href="{% url 'publicaciones_lista' %}">ver mas</a></div>
    </div>
   <div class="small-2 title-multimedia columns">Multimedia</div>
    <div class="multimedia-list">
