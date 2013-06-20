@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url('^pages/', include('django.contrib.flatpages.urls')),
     url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^search/', include('googlesearch.urls')),
-    
+    url(r'^contactenos/$', 'noticias.views.contacto', name='contactenos'),
 )
 
 
