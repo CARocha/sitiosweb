@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load embed_video_tags %}
+{% block contenido %}
+
+  <div class="pag-title">
+    <div class="row">
+      <div class="large-12 page-title columns">Listas de videos</div>
+    </div>
+   </div>
+  
+<div class="bg-single">
+
+<div class="row">
+ <div class="large-12 bg-single columns">
+
+   <div class="large-9 columns">
+     
+     <div class="post-news">
+      {% for obj in object_list %}
+        <div class="video-sample">{% video obj.url as video %}
+          <a data-reveal-id="videoModal-{{obj.id}}" href=""><img src="{{ video.thumbnail}}" alt=""></a>
+          {% endvideo %}
+        </div>
+      {% endfor %}
+     </div>
+  <div class="paginador">
+    <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li class="arrow unavailable"><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+    {% endif %}
+    {% for numero in page_obj.paginator.page_range %}
+      <li class="{%if numero == 1 %}current{%endif%}"><a href="?page={{numero}}">{{numero}}</a></li>
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li class="arrow"><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+    {% endif %}
+    </ul>
+  </div>
+   </div>
+  {% include "sidebar_lista.html" %}
+
+ </div>
+</div>
+
+{% for obj in object_list %}
+  <div id="videoModal-{{obj.id}}" class="reveal-modal medium">
+  <h2>{{obj.nombre}}</h2>
+  <div class="flex-video">
+    {% video obj.url as video %}
+      {{video|embed:"640x480"}}  
+    {% endvideo %}
+  </div>
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+{% endfor %}
+
+</div>
+{% endblock %}
