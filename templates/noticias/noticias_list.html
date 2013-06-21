@@ -28,7 +28,7 @@
 	        {% endthumbnail %}          
         {% endfor %}
         <h2 class="title-news"><a href="{{noticia.get_absolute_url}}">{{noticia.titulo}}</a></h2>
-        <div class="news-post-list">{{ noticia.descripcion|striptags|safe|truncatewords:16 }}</div>
+        <div class="news-post-list">{{ noticia.descripcion|striptags|safe|truncatewords:18 }}</div>
         <a class="more-news" href="{{noticia.get_absolute_url}}">Leer m&aacutes</a>
       </div>
 	{% endfor %}
