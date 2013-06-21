@@ -155,6 +155,7 @@ CKEDITOR_CONFIGS = {
               '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',
               '-', 'Link', 'Unlink', 'Anchor',
               '-', 'SpellChecker', 'Scayt','Image',
+              '-', 'Cut','Copy','PasteText',
             ],
         ],
         'toolbarCanCollapse': False,
