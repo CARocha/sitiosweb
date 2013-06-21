@@ -5,7 +5,7 @@ from .models import Publicaciones
 urlpatterns = patterns('',
         url(r'^lista/$',  ListView.as_view(model=Publicaciones,
                                            queryset=Publicaciones.objects.all(),
-                                           paginate_by=5), 
+                                           paginate_by=15), 
                                            name='publicaciones_lista'),
 
         url(r'^(?P<slug>[-_\w]+)/$', DetailView.as_view(model=Publicaciones,

@@ -159,6 +159,7 @@ CKEDITOR_CONFIGS = {
         ],
         'toolbarCanCollapse': False,
         'uiColor': '#EEe',
+        'width':'600',
     },
 }
 #google search id
