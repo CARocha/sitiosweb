@@ -4,11 +4,18 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+#import xadmin
+#xadmin.autodiscover()
+
+#from xadmin.plugins import xversion
+#xversion.registe_models()
 
 urlpatterns = patterns('',
+    
     url(r'^$', 'noticias.views.index', name='index'),
     url(r'^multimedia/$', 'noticias.views.multimedia_publicacion', name='multimedia_publicacion'),
     url(r'^admin/', include(admin.site.urls)),
+    #url(r'^admin/', include(xadmin.site.urls)),
     url(r'^noticias/', include('noticias.urls')),
     url(r'^eventos/', include('eventos.urls')),
     url(r'^publicaciones/', include('publicaciones.urls')),
