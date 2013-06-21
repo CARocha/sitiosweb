@@ -37,6 +37,7 @@ class Audio(models.Model):
 		return self.nombre
 	class Meta:
 		verbose_name_plural = "Audios"
+		ordering = ('-id',)
 
 class Videos(models.Model):
 	nombre= models.CharField(max_length=200, null=True, blank=True)
@@ -48,3 +49,4 @@ class Videos(models.Model):
 		return self.nombre
 	class Meta:
 		verbose_name_plural = "Videos"
+		ordering = ('-id',)

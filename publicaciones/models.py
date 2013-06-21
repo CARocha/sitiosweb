@@ -34,6 +34,7 @@ class Publicaciones(models.Model):
     class Meta:
         verbose_name = u'Publicación'
         verbose_name_plural = u'Publicaciones'
+        ordering = ('-id',)
 
     def __unicode__(self):
         return u'%s' % self.titulo
