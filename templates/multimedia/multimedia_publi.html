@@ -67,10 +67,10 @@
     <p class="title" data-section-title><a href="#panel1">Videos</a></p>
     <div class="content" data-section-content>
       {% for obj in ultimos_videos %}
-          <div class="video-sample">{% video obj.url as video %}
-              <a data-reveal-id="videoModal-{{obj.id}}" href=""><img src="{{ video.thumbnail}}" alt=""></a>
-              {% endvideo %}
-      </div>
+        <div class="video-sample">{% video obj.url as video %}
+          <a data-reveal-id="videoModal-{{obj.id}}" href=""><img src="{{ video.thumbnail}}" alt=""></a>
+          {% endvideo %}
+        </div>
       {% endfor %}
     </div>
   </section>
