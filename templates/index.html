@@ -103,6 +103,9 @@
     <div class="video-box">
     {% for obj in ultimos_videos %}
       <div class="video-sample">{% video obj.url as video %}
+        <div class="play-icon"><a data-reveal-id="videoModal-{{obj.id}}" href="">
+            <img src="{{STATIC_URL}}img/play.png">
+          </a></div>
                                 <a data-reveal-id="videoModal-{{obj.id}}" href=""><img src="{{ video.thumbnail}}" alt=""></a>
                                 {% endvideo %}
       </div>
