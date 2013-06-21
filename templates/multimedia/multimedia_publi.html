@@ -71,12 +71,15 @@
       <div class="video-container">
       {% for obj in ultimos_videos %}
         <div class="video-sample">{% video obj.url as video %}
+          <div class="play-icon"><a data-reveal-id="videoModal-{{obj.id}}" href="">
+            <img src="{{STATIC_URL}}img/play.png">
+          </a></div>
           <a data-reveal-id="videoModal-{{obj.id}}" href=""><img src="{{ video.thumbnail}}" alt=""></a>
           {% endvideo %}
         </div>
       {% endfor %}
       </div>
-      <div class="button-more"><a href="#">ver mas</a></div>
+      <div class="button-more"><a href="{% url 'videos_lista' %}">ver mas</a></div>
     </div>
     </section>
 
@@ -92,7 +95,7 @@
             </div>
       {% endfor %}    
   
-      <div class="button-more"><a href="#">ver mas</a></div>
+      <div class="button-more"><a href="{% url 'audio_lista' %}">ver mas</a></div>
     </div>
     </section>
   </div>
