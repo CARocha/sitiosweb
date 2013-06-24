@@ -47,12 +47,15 @@
 
    <div class="large-9 columns">
      
-     <div class="post-news">
+     <div class="post-audio">
       {% for obj in object_list %}
+      <div class="audio-playlist">
         <audio preload="auto">
           <source src="/media/{{obj.audio}}">
         </audio>
-        <p>{{obj.nombre}}</p>
+        <span class="titulo-audio">{{obj.nombre}}</span>
+        <div class="tiny audios-d  button">descargar</div>
+       </div>
       {% endfor %}
      </div>
   <div class="paginador">
