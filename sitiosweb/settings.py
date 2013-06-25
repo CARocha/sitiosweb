@@ -90,15 +90,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    #'xadmin',
-    #'crispy_forms',
-    #'reversion',
-    #'django_admin_bootstrapped',
+    
     'suit',
     'django.contrib.admin',
     'django.contrib.flatpages',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'django_coverage',
+    'floppyforms',
+    'rest_framework',
     # app de la web
     'eventos',
     'multimedia',
@@ -168,3 +168,5 @@ GOOGLE_SEARCH_PARTNER_ID = '008303288612978745529:mrverxh26vs'
 SUIT_CONFIG = {
     'ADMIN_NAME': 'Administracion ASONVIHSIDA'
 }
+
+ADMIN2_THEME_DIRECTORY = "admin2/bootstrap/"
