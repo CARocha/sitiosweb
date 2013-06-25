@@ -2,8 +2,13 @@
 
 {% block contenido %}
   <div class="row">
-   <div class="large-6 column">
-      <h2>Contacto</h2>
+  <div class="large-12 page-title columns">Contactenos</div>
+  </div>
+  <div class="bg-single">
+  <div class="row">
+   <div class="large-12 columns">
+    <div class="large-6 contactos column">
+      
       <form action="/contactenos/" method="post" class='form-horizontal'>{% csrf_token %}
       {% for field in form %}
         <div class='control-group{% if field.errors %} error{% endif %}'>
@@ -17,9 +22,16 @@
         </div> 
       {% endfor %}
     <div class='form-actions'>
-        <input class='btn btn-primary' type="submit" value="Enviar" />
+        <input class="tiny submit button" type="submit" value="Enviar" />
     </div>
     </form>
+    </div>
+  <div class="large-5 contactos columns">
+  <h2>Texto para informacion en Asonvihsida</h2>
+  Aliquam sed tortor. Pid nec pellentesque magna duis? Amet? Amet! Sit cum! Lacus odio mus, eu phasellus adipiscing? Proin nunc, turpis! Auctor! Turpis. Et est augue amet ultrices! Pulvinar pellentesque? Ut ridiculus lundium a amet sed, auctor dolor, et mattis placerat nunc! Porta adipiscing ultricies? Urna dictumst pulvinar elementum proin urna dictumst! Porttitor pulvinar? Magna? Integer, et phasellus elit habitasse egestas montes duis sed elementum ut, in vel sit turpis elit, urna tortor pellentesque dapibus!  
+  </div>
+  </div>
+ </div>
 </div>
-</div>
+
 {% endblock contenido %}
