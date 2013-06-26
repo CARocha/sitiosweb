@@ -17,7 +17,7 @@
    <div class="large-9 columns">
      <div class="box-tabs">
       <div class="tabb"><a href="{% url 'noticias_categoria' 'vih' %}">Viviendo con Vih</a></div>
-      <div class="tabb"><a href="#">Ninez y adolescencia</a></div>
+      <div class="tabb"><a href="{% url 'noticias_categoria' 'ninez' %}">Ninez y adolescencia</a></div>
      </div>
      <div class="post-news">
      {% for noticia in object_list %}

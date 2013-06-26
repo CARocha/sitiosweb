@@ -12,14 +12,14 @@
   	<div class="small-block-3">
   	 <div class="pub-detail">
 		{% if object.portada %}
-  		{% thumbnail object.portada "85x90" crop="10%" as img %}
+  		{% thumbnail object.portada "250x350" crop="10%" as img %}
             <div class="img-news"><a href="{{noticia.get_absolute_url}}"><img src="/media/{{img}}"></a></div>
           {% endthumbnail %}
     	{%else%}
       <img src="http://placehold.it/250x350">
     	{%endif%}
       <br>
-      <div class="descargar"><a class="tiny button"href="">Descargar publicacion</a></div>
+      <div class="descargar"><a class="tiny button"href="/media/{{object.adjunto}}">Descargar publicacion</a></div>
      </div>
 
     </div>

@@ -54,7 +54,7 @@
           <source src="/media/{{obj.audio}}">
         </audio>
         <span class="titulo-audio">{{obj.nombre}}</span>
-        <div class="tiny audios-d  button">descargar</div>
+        <div class="descargar"><a class="tiny button" href="/media/{{obj.audio}}" download="{{obj.nombre}}">descargar</a></div>
        </div>
       {% endfor %}
      </div>
