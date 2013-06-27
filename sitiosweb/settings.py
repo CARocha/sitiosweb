@@ -96,9 +96,9 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'django_coverage',
-    'floppyforms',
-    'rest_framework',
+    #'django_coverage',
+    #'floppyforms',
+    #'rest_framework',
     # app de la web
     'eventos',
     'multimedia',
