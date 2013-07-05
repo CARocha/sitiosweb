@@ -166,7 +166,6 @@ CKEDITOR_CONFIGS = {
 #google search id
 GOOGLE_SEARCH_PARTNER_ID = '008303288612978745529:mrverxh26vs'
 SUIT_CONFIG = {
-    'ADMIN_NAME': 'Administracion ASONVIHSIDA'
+    'ADMIN_NAME': 'Administracion ASONVIHSIDA',
+    
 }
-
-ADMIN2_THEME_DIRECTORY = "admin2/bootstrap/"

@@ -40,3 +40,9 @@ class Noticias(models.Model):
 
     def __unicode__(self):
         return u'%s' % self.titulo
+
+class InicioTexto(models.Model):
+    texto = RichTextField()
+
+    def __unicode__(self):
+        return u'%s' % self.texto
