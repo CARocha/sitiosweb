@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Noticias
+from .models import Noticias, InicioTexto
 from multimedia.models import *
 
 from django.contrib.flatpages.admin import FlatPageAdmin
@@ -12,11 +12,18 @@ from django import forms
 from ckeditor.widgets import CKEditorWidget
 
 class FotosAdmin(generic.GenericTabularInline):
-	model = Fotos
+    model = Fotos
 
 class NoticiasAdmin(admin.ModelAdmin):
-	inlines = [FotosAdmin]
-	list_display = ['titulo','fecha','autor', 'get_tags']
+
+    def queryset(self, request):
+        qs = super(NoticiasAdmin, self).queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(autor=request.user)
+
+    inlines = [FotosAdmin]
+    list_display = ['titulo','fecha','autor', 'get_tags']
 
 
 class FlatpageForm(FlatpageFormOld):
@@ -31,3 +38,4 @@ admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)
 
 admin.site.register(Noticias, NoticiasAdmin)
+admin.site.register(InicioTexto)

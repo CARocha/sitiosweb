@@ -61,13 +61,13 @@
   </div>
   <div class="large-4 columns">
     <h1 class="welcome">Bienvenidos a  ASONVIHSIDA</h1>
-    <div class="text-welcome">Porttitor in habitasse platea dis ultrices. Tortor nascetur nec cursus sagittis odio duis et! Nascetur! Nec non magna integer? Mid scelerisque dolor in facilisis aliquam adipiscing habitasse aliquet dictumst rhoncus! Lorem</div>
-    <ul class="menu-rapido circle">
-      <li><a href="#">Conoce mas sobre VIH</a></li>
-      <li><a href="#">Tratamientos de VIH</a></li>
-      <li><a href="#">Comunicate con nosotros</a></li>
-      <li><a href="#">Estadisticas</a></li>
-    </ul>
+    <div class="text-welcome">
+      {% for  obj in texto %}
+          {{obj.texto|safe}}
+      {% empty %}
+          <p>No hay nada que mostrar</p>
+      {% endfor %} 
+    </div>
   </div>
 
   </div>

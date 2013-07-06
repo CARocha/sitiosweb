@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Noticias
+from .models import Noticias, InicioTexto
 from multimedia.models import Videos, Audio
 from eventos.models import Eventos
 from publicaciones.models import Publicaciones
@@ -22,13 +22,16 @@ def index(request, template='index.html'):
     ultimas_publicaciones = Publicaciones.objects.order_by('-id')[0:3]
     #4 ultimos audios
     ultimos_audios = Audio.objects.order_by('-id')[0:4]
+    #testo al inicio de la pagina
+    texto = InicioTexto.objects.all()
     
     return render(request, template, {'ultimas_noticias':ultimas_noticias,
                                        'ultimas_destacadas':ultimas_destacadas,
                                        'ultimos_videos':ultimos_videos,
                                        'ultimos_eventos':ultimos_eventos,
                                        'ultimas_publicaciones':ultimas_publicaciones,
-                                       'ultimos_audios':ultimos_audios})
+                                       'ultimos_audios':ultimos_audios,
+                                       'texto':texto})
 
 
 class NoticiasList(ListView):
