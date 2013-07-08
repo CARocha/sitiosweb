@@ -150,7 +150,7 @@ CKEDITOR_UPLOAD_PATH = os.environ.get('MEDIA_ROOT',os.path.join(SITE_ROOT, 'medi
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [
-            [      'Undo', 'Redo',
+            [      'Undo', 'Redo','Source',
               '-', 'Bold', 'Italic', 'Underline',
               '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',
               '-', 'Link', 'Unlink', 'Anchor',
