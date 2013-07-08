@@ -78,7 +78,7 @@
 <div class="large-12 content columns">
 
     <div class="large-3  columns">
-    <div class="title-bar">Ultimas Noticias</div>
+    <div class="title-bar"><a href="{% url 'noticias_lista' %}">Ultimas Noticias</a></div>
     <div class="news-post">
      {% for noticia in ultimas_noticias %}
       <div class="list-news">
@@ -99,7 +99,7 @@
     </div>
 
  <div class="large-6   columns">
-    <div class="title-bar">Multimedia - ultimos videos</div>
+    <div class="title-bar"><a href="{% url 'multimedia_publicacion' %}">Multimedia - ultimos videos</a></div>
     <div class="video-box">
     {% for obj in ultimos_videos %}
       <div class="video-sample">{% video obj.url as video %}
@@ -111,7 +111,7 @@
       </div>
     {% endfor %}
     </div>
-  <div class="title-bar">Proximos eventos</div>
+  <div class="title-bar"><a href="{% url 'evento_lista' %}">Proximos eventos</a></div>
   <div class="eventos">
   {% for evento in ultimos_eventos %}
     <div class="box-event">
