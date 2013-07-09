@@ -90,15 +90,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    
     'suit',
     'django.contrib.admin',
     'django.contrib.flatpages',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    #'django_coverage',
-    #'floppyforms',
-    #'rest_framework',
     # app de la web
     'eventos',
     'multimedia',

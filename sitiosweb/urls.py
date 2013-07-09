@@ -27,7 +27,6 @@ urlpatterns = patterns('',
     url(r'^contactenos/$', 'noticias.views.contacto', name='contactenos'),
 )
 
-
 urlpatterns += staticfiles_urlpatterns()
 
 if DEBUG:
