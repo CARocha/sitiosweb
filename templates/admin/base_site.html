@@ -3,9 +3,7 @@
 
 
 {% block extrastyle %}
-{%if not request.user.is_superuser %}
   <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/custom_admin.css" /> 
-{%endif%}
 {% endblock %}
 
 {% block header_content %}
