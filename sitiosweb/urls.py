@@ -25,6 +25,8 @@ urlpatterns = patterns('',
     url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^search/', include('googlesearch.urls')),
     url(r'^contactenos/$', 'noticias.views.contacto', name='contactenos'),
+    url(r'^contacto_ajax/$', 'noticias.views.contacto_ajax', name='contacto_ajax'),
+    url(r'^captcha/', include('captcha.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()

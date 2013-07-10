@@ -110,6 +110,7 @@ INSTALLED_APPS = (
     'geoposition',
     'embed_video',
     'googlesearch',
+    'captcha',
 )
 
 # A sample logging configuration. The only tangible logging

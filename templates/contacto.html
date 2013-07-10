@@ -1,6 +1,36 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_js %}
+<link rel="stylesheet" href="{% static 'css/alertify.core.css' %}" />
+<link rel="stylesheet" href="{% static 'css/alertify.default.css' %}" />
+<script src="{% static 'js/alertify.js' %}"></script>
+  <script type="text/javascript">
+  $(document).ready(function($) {
+
+
+    $('#pony_form').on("submit", function(e){
+        e.preventDefault();
+        $.post('{% url 'contacto_ajax' %}', $("#pony_form").serialize(),
+          function(data) {
+            console.log(data);
+            if (data === "exito"){
+                  console.log("hubo un error");
+                  alertify.error("Ocurrieron error lo lamentamos vuelva a intentar");
+                }
+                else {
+                  $('#pony_form')[0].reset();
+                  alertify.success("Se ha enviado con exito su mensaje gracias.");
+                  
+                }
+      });
+  });
+ 
+ });
+</script>
+{% endblock extra_js %}
 
 {% block contenido %}
+
   <div class="row">
   <div class="large-12 page-title columns">Contactenos</div>
   </div>
@@ -8,8 +38,10 @@
   <div class="row">
    <div class="large-12 columns">
     <div class="large-6 contactos column">
-      
-      <form action="/contactenos/" method="post" class='form-horizontal'>{% csrf_token %}
+      {%if okis%}
+        <p class="success">Su mensaje ha sido enviado existosamente gracias!!</p>
+      {%endif%}
+      <form id="pony_form" method="POST" class='form-horizontal' >{% csrf_token %}
       {% for field in form %}
         <div class='control-group{% if field.errors %} error{% endif %}'>
             <label class='control-label' for='{{ field.auto_id }}'>{{ field.label }}</label>
@@ -22,13 +54,13 @@
         </div> 
       {% endfor %}
     <div class='form-actions'>
-        <input class="tiny submit button" type="submit" value="Enviar" />
+        <input type="submit" class="tiny submit button" value="Enviar" />
     </div>
     </form>
     </div>
   <div class="large-5 contactos columns">
   <h2>Texto para informacion en Asonvihsida</h2>
-  Aliquam sed tortor. Pid nec pellentesque magna duis? Amet? Amet! Sit cum! Lacus odio mus, eu phasellus adipiscing? Proin nunc, turpis! Auctor! Turpis. Et est augue amet ultrices! Pulvinar pellentesque? Ut ridiculus lundium a amet sed, auctor dolor, et mattis placerat nunc! Porta adipiscing ultricies? Urna dictumst pulvinar elementum proin urna dictumst! Porttitor pulvinar? Magna? Integer, et phasellus elit habitasse egestas montes duis sed elementum ut, in vel sit turpis elit, urna tortor pellentesque dapibus!  
+  esto nop por el momento!!  
   </div>
   </div>
  </div>
