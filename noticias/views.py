@@ -72,4 +72,5 @@ def contacto_ajax(request):
             print "ok pues !!"
             return HttpResponse( json.dumps( 'exito' ), mimetype='application/json' )
         else:
-          return HttpResponse( json.dumps( 'fallo' ), mimetype='application/json' )
+            print "nose jue el puto correo"
+            return HttpResponse( json.dumps( 'falso' ), mimetype='application/json' )

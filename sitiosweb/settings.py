@@ -166,3 +166,5 @@ SUIT_CONFIG = {
     'ADMIN_NAME': 'Administracion ASONVIHSIDA',
     
 }
+CAPTCHA_FONT_SIZE = 45
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'

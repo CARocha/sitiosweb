@@ -12,18 +12,24 @@
         e.preventDefault();
         $.post('{% url 'contacto_ajax' %}', $("#pony_form").serialize(),
           function(data) {
-            console.log(data);
-            if (data === "exito"){
-                  console.log("hubo un error");
-                  alertify.error("Ocurrieron error lo lamentamos vuelva a intentar");
-                }
-                else {
+            data = eval('('+data+')');
+            if ("exito" == data){
                   $('#pony_form')[0].reset();
-                  alertify.success("Se ha enviado con exito su mensaje gracias.");
-                  
+                   alertify.success("Se ha enviado con exito su mensaje gracias.");
+                }else{
+                    console.log("hubo un error");
+                    alertify.error("Ocurrieron error lo lamentamos vuelva a intentar");
                 }
       });
   });
+
+    $('.js-captcha-refresh').click(function(){
+    $form = $(this).parents('form');
+
+    $.getJSON($(this).data('url'), {}, function(json) {
+        // This your should update captcha image src and captcha hidden input
+    });return false;
+});
  
  });
 </script>
@@ -38,9 +44,7 @@
   <div class="row">
    <div class="large-12 columns">
     <div class="large-6 contactos column">
-      {%if okis%}
-        <p class="success">Su mensaje ha sido enviado existosamente gracias!!</p>
-      {%endif%}
+      
       <form id="pony_form" method="POST" class='form-horizontal' >{% csrf_token %}
       {% for field in form %}
         <div class='control-group{% if field.errors %} error{% endif %}'>
