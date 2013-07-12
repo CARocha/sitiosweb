@@ -56,7 +56,8 @@ def filtro_categoria(request,categoria,template='noticias/noticias_list.html'):
 
 def contacto(request, template='contacto.html'):
     form = ContactForm()
-    return render(request, template, {'form': form,})
+    texto2 = InicioTexto.objects.filter(id=2)
+    return render(request, template, {'form': form,'texto2':texto2})
 
 def contacto_ajax(request):
     if request.is_ajax():
@@ -66,11 +67,10 @@ def contacto_ajax(request):
             message = form.cleaned_data['mensaje']
             sender = form.cleaned_data['correo']
 
-            recipients = ['crocha09.09@gmail.com',]
+            recipients = ['info@asonvihsida.org.ni',
+                          'crocha09.09@gmail.com']
 
             send_mail(subject, message, sender, recipients)
-            print "ok pues !!"
             return HttpResponse( json.dumps( 'exito' ), mimetype='application/json' )
         else:
-            print "nose jue el puto correo"
             return HttpResponse( json.dumps( 'falso' ), mimetype='application/json' )

@@ -23,19 +23,19 @@
  <div class="large-3 columns">
     <div class="box-green">
       <ul class="secondary-menu">
-        <li><a href="#">Aliados y donantes</a></li>
-        <li><a href="#">Objetivos y perspectivas</a></li>
-        <li><a href="#">La labor</a></li>
+        <li><a href="/aliados-donantes/">Aliados y donantes</a></li>
+        <li><a href="/objetivos-perspectivas/">Objetivos y perspectivas</a></li>
+        <li><a href="/labor/">La labor</a></li>
       </ul>
     </div>
-    <div class="box-red"><a href="/viviendo-vih/">Viviendo con Vih. conoce m&aacutes.</a></div>
+    <div class="box-red"><a href="/viviendo-vih/">Viviendo con VIH. conoce m&aacutes.</a></div>
     <div class="title-sidebar-3">Noticias</div>
     <div class="news-sidebar">
     {% for obj in noticias %}
     	<div class="text-news-side"><a href="{{obj.get_absolute_url}}">{{obj.titulo}}</a></div>
     {% endfor %}
     </div>
-    <div class="read-more-side"><a href="{% url 'noticias_lista' %}">Leer mas</a></div>
+    <div class="read-more-side"><a href="{% url 'noticias_lista' %}">Leer más</a></div>
     
   	</div>
  </div>

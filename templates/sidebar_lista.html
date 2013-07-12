@@ -11,8 +11,12 @@
     <br>
     <div class="title-sidebar-2">Contactenos</div>
     <div class="text-box">
-      Para mayor informacion:
-      Direccion: <br>Busto Jose marti 100 al sur
-      Email: info@info.com
+      {% if texto_contacto %}
+        {% for obj in texto_contacto %}
+          {{obj.texto}}
+        {% endfor %}
+      {%else%}
+          <p>no informacion de contacto</p>
+      {% endif %}
     </div>
   </div>

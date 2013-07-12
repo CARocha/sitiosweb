@@ -163,8 +163,6 @@ CKEDITOR_CONFIGS = {
 #google search id
 GOOGLE_SEARCH_PARTNER_ID = '008303288612978745529:tsitlc6kv7c'
 SUIT_CONFIG = {
-    'ADMIN_NAME': 'Administracion ASONVIHSIDA',
-    
+    'ADMIN_NAME': 'Administracion ASONVIHSIDA',   
 }
-CAPTCHA_FONT_SIZE = 45
-CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+CAPTCHA_FONT_SIZE = 44

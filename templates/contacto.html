@@ -15,6 +15,13 @@
             data = eval('('+data+')');
             if ("exito" == data){
                   $('#pony_form')[0].reset();
+
+                  $.getJSON('/captcha/refresh/', {}, function(json) {
+                  $('.captcha').attr('src', json.image_url);
+                  $('#id_captcha_0').val(json.key);
+                  $('#id_captcha_1').val('');
+                  });
+
                    alertify.success("Se ha enviado con exito su mensaje gracias.");
                 }else{
                     console.log("hubo un error");
@@ -63,8 +70,13 @@
     </form>
     </div>
   <div class="large-5 contactos columns">
-  <h2>Texto para informacion en Asonvihsida</h2>
-  esto nop por el momento!!  
+    {% if texto2 %}
+       {% for obj in texto2 %}
+         {{obj.texto|safe}}
+       {% endfor %}
+    {%else%}
+      <p>No existe texto</p>
+    {% endif %} 
   </div>
   </div>
  </div>
