@@ -23,7 +23,7 @@ def index(request, template='index.html'):
     #4 ultimos audios
     ultimos_audios = Audio.objects.order_by('-id')[0:4]
     #testo al inicio de la pagina
-    texto = InicioTexto.objects.all()
+    texto = InicioTexto.objects.filter(id=1)
     
     return render(request, template, {'ultimas_noticias':ultimas_noticias,
                                        'ultimas_destacadas':ultimas_destacadas,
