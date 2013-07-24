@@ -13,7 +13,7 @@
     <div class="text-box">
       {% if texto_contacto %}
         {% for obj in texto_contacto %}
-          {{obj.texto}}
+          {{obj.texto|safe}}
         {% endfor %}
       {%else%}
           <p>no informacion de contacto</p>

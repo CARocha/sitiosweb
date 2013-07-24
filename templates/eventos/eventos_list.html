@@ -1,13 +1,58 @@
 {% extends "base.html" %}
-
+{% load thumbnail%}
 {% block contenido %}
-    <h2>Eventos</h2>
-    <ul>
+<div class="pag-title">
+   <div class="row">
+      <div class="large-12 page-title columns">Eventos</div>
+   </div>
+</div>
+ 
+<div class="bg-single">
+ <div class="row">
+  <div class="large-12 bg-single columns">
+    <div class="large-9 columns">
         {% for obj in object_list %}
-            <li><a href="{{ obj.get_absolute_url }}">{{ obj.titulo }}</a></li>
-            <li>{{ obj.fecha__inicio }} -- {{obj.fecha_finalizacion}}</li>
-            <li>{{ obj.descripcion|striptags|safe|truncatewords:16 }}</li>
-            <li>get: {{ obj.get_absolute_url }}</li>
+        <div class="event-list">
+         <div class="event-image-list">
+      {% if obj.fotos.all %}
+          {% for imagen in obj.fotos.all|slice:"1" %}
+            {% thumbnail imagen.imagen "150x100" crop="1%" as img %}
+                <div class="img-pagina"><img src="/media/{{img}}"></div>
+            {% endthumbnail %} 
+          {%endfor%}
+      {% else %}
+         <div class="img-pagina"><img src="http://placehold.it/150x100"></div>
+      {% endif %}
+         </div>
+            <span class="title-event">
+            <a href="{{ obj.get_absolute_url }}">{{ obj.titulo }}</a>
+            </span>
+            <br>
+            <span class="texto-fecha">inicio:{{ obj.fecha_inicio|date:"j/m/Y" }} &nbsp; terminacion: {{obj.fecha_finalizacion|date:"j/m/Y"}}</span>
+            <br><br>
+            <span class="text-event">Descripcion:
+            {{ obj.descripcion|striptags|safe|truncatewords:8 }}<br></span>
+            <a class="tiny audios-d button" href="{{ obj.get_absolute_url }}">ver mas</a>
+            </div>
         {% endfor %}
-    </ul>
+
+	</div>
+	
+	<div class="large-3 columns">
+    <div class="title-sidebar">Noticias</div>
+
+    <div class="news-sidebar"> 
+      
+    {% for obj in noticias %}
+    <ul>
+     <li class="text-news-side"><a href="{{obj.get_absolute_url}}">{{obj.titulo}}</a></li>
+     </ul>
+    {% endfor %}  
+    <div class="read-more-side"><a href="/noticias/lista/">Leer m&aacutes</a></div>
+    
+    </div>
+  </div>
+  </div>
+ </div>
+</div>
 {% endblock %}
