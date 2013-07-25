@@ -17,7 +17,7 @@ class Noticias(models.Model):
     fecha = models.DateField()
     descripcion = RichTextField('Descripción')
     fotos = generic.GenericRelation(Fotos)
-    categoria= TagAutocompleteField(help_text='Separar elementos con "," ', 
+    categoria= TagAutocompleteField("Tags", help_text='Separar elementos con "," ', 
                                     null=True, blank=True)
     destacada = models.BooleanField()
 

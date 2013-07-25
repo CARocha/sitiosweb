@@ -19,7 +19,7 @@ class Eventos(models.Model):
     descripcion = RichTextField('Descripción')
     position = GeopositionField(null=True, blank=True)
     fotos = generic.GenericRelation(Fotos)
-    categoria= TagAutocompleteField(help_text='Separar elementos con "," ', 
+    categoria= TagAutocompleteField("Tags", help_text='Separar elementos con "," ', 
                                     null=True, blank=True)
 
     autor = models.ForeignKey(User)
