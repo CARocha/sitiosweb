@@ -9,6 +9,7 @@ from django.contrib.contenttypes import generic
 from django.core.urlresolvers import reverse
 from tagging.models import Tag
 from tagging_autocomplete.models import TagAutocompleteField
+from multimedia.models import Adjuntos
 
 # Create your models here.
 class Noticias(models.Model):
@@ -20,6 +21,7 @@ class Noticias(models.Model):
     categoria= TagAutocompleteField("Tags", help_text='Separar elementos con "," ', 
                                     null=True, blank=True)
     destacada = models.BooleanField()
+    adjunto = generic.GenericRelation(Adjuntos)
 
     autor = models.ForeignKey(User)
 

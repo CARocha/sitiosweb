@@ -50,3 +50,18 @@ class Videos(models.Model):
 	class Meta:
 		verbose_name_plural = "Videos"
 		ordering = ('-id',)
+
+class Adjuntos(models.Model):
+	nombre = models.CharField(max_length=150)
+	archivo = models.FileField(upload_to=get_file_path, blank=True, null=True)
+
+	content_type = models.ForeignKey(ContentType)
+	object_id = models.PositiveIntegerField()
+	content_object = generic.GenericForeignKey('content_type', 'object_id')
+
+	fileDir = 'adjuntos/'
+
+	def __unicode__(self):
+		return self.nombre
+	class Meta:
+		verbose_name_plural = "Adjuntos"

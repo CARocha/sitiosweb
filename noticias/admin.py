@@ -14,6 +14,9 @@ from ckeditor.widgets import CKEditorWidget
 class FotosAdmin(generic.GenericTabularInline):
     model = Fotos
 
+class AdjuntoAdmin(generic.GenericTabularInline):
+    model = Adjuntos
+
 class NoticiasAdmin(admin.ModelAdmin):
 
     def queryset(self, request):
@@ -22,7 +25,7 @@ class NoticiasAdmin(admin.ModelAdmin):
             return qs
         return qs.filter(autor=request.user)
 
-    inlines = [FotosAdmin]
+    inlines = [FotosAdmin, AdjuntoAdmin]
     list_display = ['titulo','fecha','autor', 'get_tags']
 
 
