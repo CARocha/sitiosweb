@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Videos, Fotos, Audio
+from .models import Videos, Fotos, Audio, Adjuntos
 
 class VideosAdmin(admin.ModelAdmin):
     pass
@@ -20,4 +20,5 @@ class AudioAdmin(admin.ModelAdmin):
 
 admin.site.register(Videos, VideosAdmin)
 admin.site.register(Fotos)
+admin.site.register(Adjuntos)
 admin.site.register(Audio, AudioAdmin)

@@ -3,13 +3,12 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.template.defaultfilters import slugify
-from multimedia.models import Fotos
+from multimedia.models import Fotos, Adjuntos
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import generic
 from django.core.urlresolvers import reverse
 from tagging.models import Tag
 from tagging_autocomplete.models import TagAutocompleteField
-from multimedia.models import Adjuntos
 
 # Create your models here.
 class Noticias(models.Model):

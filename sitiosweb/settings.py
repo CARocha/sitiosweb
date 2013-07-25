@@ -153,11 +153,13 @@ CKEDITOR_CONFIGS = {
               '-', 'Link', 'Unlink', 'Anchor',
               '-', 'SpellChecker', 'Scayt','Image',
               '-', 'Cut','Copy','PasteText',
+              '-', 'NumberedList','BulletedList','Table',
             ],
         ],
         'toolbarCanCollapse': False,
         'uiColor': '#EEe',
         'width':'600',
+        'skin' : 'v2',
     },
 }
 #google search id
