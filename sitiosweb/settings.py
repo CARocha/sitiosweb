@@ -147,7 +147,7 @@ CKEDITOR_UPLOAD_PATH = os.environ.get('MEDIA_ROOT',os.path.join(SITE_ROOT, 'medi
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [
-            [      'Undo', 'Redo','Source',
+            [ '-', 'Undo', 'Redo','Source',
               '-', 'Bold', 'Italic', 'Underline',
               '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',
               '-', 'Link', 'Unlink', 'Anchor',
@@ -156,10 +156,7 @@ CKEDITOR_CONFIGS = {
               '-', 'NumberedList','BulletedList','Table',
             ],
         ],
-        'toolbarCanCollapse': False,
-        'uiColor': '#EEe',
         'width':'600',
-        'skin' : 'moono',
     },
 }
 #google search id
